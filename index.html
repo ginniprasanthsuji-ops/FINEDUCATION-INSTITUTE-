@@ -465,8 +465,7 @@ function updateAuth() {
   document.getElementById("authPassword").required = false;
 }
 
-  function closeAuth();
-} submitAuth(event) {
+  function submitAuth(event) {
   event.preventDefault();
 
   const name = document.getElementById("fullName").value.trim();
@@ -489,6 +488,7 @@ function updateAuth() {
     "noopener"
   );
   closeAuth();
+  }
 </script>
 <section id="market-updates" style="max-width:900px;margin:30px auto;padding:20px;font-family:Arial,sans-serif;">
   <h2>Market Updates | మార్కెట్ సమాచారం</h2>
