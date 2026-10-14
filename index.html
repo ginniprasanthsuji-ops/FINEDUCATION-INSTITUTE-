@@ -1,230 +1,173 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#102b46">
-<title>FINEDUCATION INSTITUTE | Business & Finance</title>
+<meta name="description" content="FINEDUCATION INSTITUTE - Business support and financial education in Tekkali, Andhra Pradesh.">
+<title>FINEDUCATION INSTITUTE | Tekkali</title>
 <style>
-:root{--navy:#102b46;--green:#5bd6b0;--light:#f3f8f7;--text:#203447}
+:root{--navy:#102544;--blue:#1b4c7c;--gold:#e8bd69;--light:#f4f7fb;--text:#273449;--muted:#68768a}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.7}
-a{text-decoration:none;color:inherit}
-.wrap{width:min(1100px,90%);margin:auto}
-header{position:sticky;top:0;background:white;z-index:10;box-shadow:0 2px 12px #102b4610}
-.nav{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.logo{font-size:19px;font-weight:900;color:var(--navy);line-height:1.2}
-.logo span{color:#159875}
-.logo small{display:block;font-size:10px;letter-spacing:3px;color:#66798a}
-nav{display:flex;gap:24px;align-items:center;font-size:13px;font-weight:bold}
-nav a:hover{color:#159875}
-.btn{display:inline-block;background:var(--green);color:var(--navy);padding:13px 19px;border-radius:8px;font-weight:bold}
-.hero{background:var(--navy);color:white;padding:85px 0 70px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
-.eyebrow{color:#72e0bd;font-size:11px;font-weight:bold;letter-spacing:2px}
-h1,h2,h3{line-height:1.2}
-h1{font-size:clamp(38px,5.5vw,65px);letter-spacing:-2px;margin:20px 0}
-h1 span,.accent{color:var(--green)}
-.hero p{color:#c7d4df;max-width:550px}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
-.btn-outline{border:1px solid #ffffff55;color:white;padding:12px 18px;border-radius:8px}
-.visual{background:#ffffff12;border:1px solid #ffffff2b;border-radius:22px;padding:30px}
-.visual .symbol{font-size:62px;color:var(--green)}
-.visual h3{font-size:24px}
-.metric{padding:13px 0;border-bottom:1px solid #ffffff22;color:#d5e2e9}
-.metric:last-child{border:0}
-section{padding:75px 0}
-.heading{text-align:center;max-width:650px;margin:0 auto 38px}
-.heading h2,.about h2{font-size:clamp(30px,4vw,43px);color:var(--navy);margin:12px 0}
-.heading p,.muted{color:#66798a}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{padding:26px;border:1px solid #e0e9eb;border-radius:15px;background:white;transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #102b4610}
-.card .icon{font-size:30px}
-.card h3{color:var(--navy);font-size:20px}
-.card p,.card li{font-size:14px;color:#637485}
-.card ul{padding-left:18px}
-.about{background:var(--light)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
-.about-panel{background:var(--navy);color:white;border-radius:20px;padding:35px}
-.about-panel h3{font-size:27px}
-.about-panel p{color:#c5d4df}
-.points{padding:0;list-style:none}
-.points li{padding:9px 0}
-.points li:before{content:"✓";color:#159875;font-weight:bold;margin-right:10px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
-.step{border-top:3px solid var(--green);padding:20px 5px}
-.step b{font-size:30px;color:#159875}
-.step h3{color:var(--navy)}
-.contact{background:var(--navy);color:white;text-align:center}
-.contact h2{font-size:clamp(30px,4vw,44px)}
-.contact p{color:#c5d4df}
-.contact .btn{margin-top:12px}
-footer{background:#0b2034;color:#c5d4df;padding:28px 0;font-size:12px}
-footer .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.disclaimer{font-size:11px;color:#9aafbf;margin-top:20px;border-top:1px solid #ffffff22;padding-top:16px}
-@media(max-width:760px){
- .nav{padding:14px 0;align-items:flex-start;flex-direction:column}
- nav{gap:14px;flex-wrap:wrap}
- .hero{padding:58px 0}
- .hero-grid,.about-grid{grid-template-columns:1fr;gap:28px}
- .cards,.steps{grid-template-columns:1fr}
- section{padding:55px 0}
- .visual{padding:23px}
-}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;color:var(--text);line-height:1.65}
+a{text-decoration:none}
+.container{width:min(1100px,92%);margin:auto}
+header{background:var(--navy);color:white;padding:17px 0}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-size:19px;font-weight:800;color:white}
+.brand span{color:var(--gold)}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:white;font-size:13px}
+.hero{background:linear-gradient(130deg,var(--navy),var(--blue));color:white;padding:75px 0}
+.tag{color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:2px}
+h1{font-size:clamp(35px,6vw,58px);line-height:1.15;margin:18px 0}
+.hero p{max-width:650px;color:#e2e9f3;font-size:16px}
+.btn{display:inline-block;padding:12px 18px;border-radius:7px;font-weight:bold;margin:8px 8px 0 0}
+.gold{background:var(--gold);color:var(--navy)}
+.outline{border:1px solid white;color:white}
+section{padding:55px 0}
+.light{background:var(--light)}
+.kicker{color:#986916;font-size:12px;letter-spacing:1.5px;font-weight:bold;text-transform:uppercase}
+h2{font-size:clamp(26px,4vw,36px);color:var(--navy);line-height:1.3;margin:8px 0 14px}
+.intro{color:var(--muted);max-width:700px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:27px}
+.card{background:white;border:1px solid #e4eaf2;border-radius:12px;padding:23px;box-shadow:0 5px 18px #1025440a}
+.icon{font-size:27px}
+.card h3{color:var(--navy);margin:9px 0}
+.card p{font-size:14px;color:var(--muted)}
+.card a{font-size:13px;font-weight:bold;color:#936717}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
+ul{padding-left:22px}
+li{margin:8px 0}
+.contact{background:var(--navy);color:white;border-radius:14px;padding:27px}
+.contact h2{color:white}
+.contact p{color:#e0e7f0}
+.contact a{color:var(--gold);overflow-wrap:anywhere}
+.notice{background:#fff7e6;border-left:4px solid var(--gold);padding:16px;font-size:13px;border-radius:5px}
+footer{background:#09172b;color:#d4dce7;padding:25px 0;font-size:12px}
+footer a{color:var(--gold)}
+.wa{position:fixed;right:15px;bottom:15px;background:#20bd5a;color:white;padding:13px 17px;border-radius:40px;font-weight:bold;box-shadow:0 5px 18px #0003;z-index:5}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}.hero{padding:52px 0}section{padding:42px 0}.nav{align-items:flex-start}nav{gap:10px 13px}}
 </style>
 </head>
 <body>
-<header>
- <div class="wrap nav">
-  <a class="logo" href="#home">F<span>+</span> FINEDUCATION
-   <small>INSTITUTE</small></a>
-  <nav aria-label="Main navigation">
-   <a href="#services">Services</a>
-   <a href="#about">About</a>
-   <a href="#process">Our Process</a>
-   <a href="#contact">Contact</a>
-  </nav>
- </div>
+<header id="home">
+<div class="container nav">
+<a class="brand" href="#home">FIN<span>EDUCATION</span></a>
+<nav>
+<a href="#about">About</a>
+<a href="#services">Business Services</a>
+<a href="#financial">Financial Services</a>
+<a href="#contact">Contact</a>
+</nav>
+</div>
 </header>
 
 <main>
-<section class="hero" id="home">
- <div class="wrap hero-grid">
-  <div>
-   <div class="eyebrow">BUSINESS SUPPORT · FINANCIAL SERVICES</div>
-   <h1>Build smarter.<br>Manage better.<br><span>Grow with clarity.</span></h1>
-   <p>Practical support for business accounts, GST-related processes and financial-service needs. Make better-informed decisions with organised information.</p>
-   <div class="actions">
-    <a class="btn" href="#services">Explore Our Services →</a>
-    <a class="btn-outline" href="#about">About Us</a>
-   </div>
-  </div>
-  <div class="visual">
-   <div class="symbol">₹</div>
-   <h3>Your business.<br>Your financial future.</h3>
-   <div class="metric">✓ Accounts & records support</div>
-   <div class="metric">✓ Business performance tracking</div>
-   <div class="metric">✓ Financial product information</div>
-  </div>
- </div>
+<section class="hero">
+<div class="container">
+<div class="tag">YOUR BUSINESS SUPPORT PARTNER</div>
+<h1>Build Better Businesses With Financial Clarity.</h1>
+<p>Practical accounts assistance, business management support and financial education for individuals, local traders and small businesses in Tekkali, Andhra Pradesh.</p>
+<a class="btn gold" href="https://wa.me/917794097864?text=Hello%2C%20I%20would%20like%20to%20know%20about%20FINEDUCATION%20INSTITUTE%20services." target="_blank" rel="noopener">Chat on WhatsApp</a>
+<a class="btn outline" href="#services">Explore Services</a>
+</div>
 </section>
 
-<section id="services">
- <div class="wrap">
-  <div class="heading">
-   <div class="eyebrow">OUR SERVICES</div>
-   <h2>Support for your next step</h2>
-   <p>Explore our service areas for individuals, small businesses and local entrepreneurs.</p>
-  </div>
-  <div class="cards">
-   <article class="card">
-    <div class="icon">📊</div>
-    <h3>Accounts & GST Support</h3>
-    <p>Keep business information organised and make record management easier.</p>
-    <ul>
-     <li>Bookkeeping assistance</li>
-     <li>Invoice and expense records</li>
-     <li>GST documentation and return-related support</li>
-     <li>Tax document organisation</li>
-    </ul>
-   </article>
-   <article class="card">
-    <div class="icon">📈</div>
-    <h3>Business Management</h3>
-    <p>Understand your business activity through useful summaries and organised data.</p>
-    <ul>
-     <li>Cash-flow tracking</li>
-     <li>MIS reports and summaries</li>
-     <li>Business finance documentation</li>
-     <li>Planning and performance review</li>
-    </ul>
-   </article>
-   <article class="card">
-    <div class="icon">💼</div>
-    <h3>Financial Services</h3>
-    <p>Get information to help you understand financial products and application processes.</p>
-    <ul>
-     <li>Mutual fund information</li>
-     <li>Investment and portfolio education</li>
-     <li>Loan and credit-card process guidance</li>
-     <li>Life, term and motor insurance information</li>
-    </ul>
-   </article>
-  </div>
- </div>
+<section id="about">
+<div class="container two">
+<div>
+<div class="kicker">About Us</div>
+<h2>Practical Support for Your Business Journey</h2>
+<p>FINEDUCATION INSTITUTE aims to make business information and financial concepts easier to understand. We support local businesses and individuals with organised records, business reporting assistance and general financial education.</p>
+<p>Our approach is built around clear communication, responsible service and helping clients understand their options.</p>
+</div>
+<div class="light" style="padding:24px;border-radius:12px">
+<h3 style="color:#102544">Our Commitment</h3>
+<ul>
+<li>Clear and practical communication</li>
+<li>Business record organisation</li>
+<li>Useful reports and documentation support</li>
+<li>General financial product information</li>
+<li>Services within applicable qualifications and authorisations</li>
+</ul>
+</div>
+</div>
 </section>
 
-<section class="about" id="about">
- <div class="wrap about-grid">
-  <div class="about-panel">
-   <div class="eyebrow">FINEDUCATION INSTITUTE</div>
-   <h3>Clear information.<br>Confident decisions.</h3>
-   <p>Helping people and businesses better understand records, financial processes and available service options.</p>
-  </div>
-  <div>
-   <div class="eyebrow">ABOUT US</div>
-   <h2>Practical guidance for real business needs.</h2>
-   <p class="muted">Our aim is to make complex processes easier to understand, help business owners organise information and guide customers towards appropriate next steps.</p>
-   <ul class="points">
-    <li>Simple, understandable communication</li>
-    <li>Organised records and documentation</li>
-    <li>Business-focused support</li>
-    <li>Transparent service scope and expectations</li>
-   </ul>
-  </div>
- </div>
+<section class="light" id="services">
+<div class="container">
+<div class="kicker">Business Services</div>
+<h2>Support to Manage Your Business Better</h2>
+<p class="intro">Explore support for business records, reporting, cash flow and documentation. Service scope and fees are discussed before engagement.</p>
+<div class="grid">
+<div class="card"><div class="icon">📒</div><h3>Accounts & Bookkeeping</h3><p>Assistance organising sales, purchases, expenses, receipts and payment records.</p><a href="https://wa.me/917794097864?text=I%20am%20interested%20in%20Accounts%20and%20Bookkeeping%20support." target="_blank" rel="noopener">Enquire on WhatsApp →</a></div>
+<div class="card"><div class="icon">🧾</div><h3>GST Support</h3><p>Help organising invoices, GST records and return-related documents. Filing is subject to applicable eligibility and authorisation.</p><a href="https://wa.me/917794097864?text=I%20am%20interested%20in%20GST%20support." target="_blank" rel="noopener">Enquire on WhatsApp →</a></div>
+<div class="card"><div class="icon">📊</div><h3>MIS Reports</h3><p>Periodic summaries of sales, expenses and business performance to assist management decisions.</p><a href="https://wa.me/917794097864?text=I%20am%20interested%20in%20MIS%20reports." target="_blank" rel="noopener">Enquire on WhatsApp →</a></div>
+<div class="card"><div class="icon">💰</div><h3>Cash Flow Monitoring</h3><p>Track money coming in and going out, receivables, payables and expected cash requirements.</p><a href="https://wa.me/917794097864?text=I%20am%20interested%20in%20Cash%20Flow%20support." target="_blank" rel="noopener">Enquire on WhatsApp →</a></div>
+<div class="card"><div class="icon">📁</div><h3>Business Documentation</h3><p>Organise business records and prepare documentation for review by banks, lenders or professional advisers.</p><a href="https://wa.me/917794097864?text=I%20need%20Business%20Documentation%20support." target="_blank" rel="noopener">Enquire on WhatsApp →</a></div>
+<div class="card"><div class="icon">📈</div><h3>Business Performance</h3><p>Understand sales trends, expenses, basic profitability indicators and business improvement opportunities.</p><a href="https://wa.me/917794097864?text=I%20need%20Business%20Performance%20support." target="_blank" rel="noopener">Enquire on WhatsApp →</a></div>
+</div>
+</div>
 </section>
 
-<section id="process">
- <div class="wrap">
-  <div class="heading">
-   <div class="eyebrow">HOW WE WORK</div>
-   <h2>A simple, clear process</h2>
-   <p>Start with your requirement and agree on the next steps.</p>
-  </div>
-  <div class="steps">
-   <article class="step">
-    <b>01</b><h3>Share your need</h3>
-    <p class="muted">Tell us which business or financial-service support you are looking for.</p>
-   </article>
-   <article class="step">
-    <b>02</b><h3>Review the details</h3>
-    <p class="muted">Identify relevant information, documents and requirements.</p>
-   </article>
-   <article class="step">
-    <b>03</b><h3>Plan the next step</h3>
-    <p class="muted">Clarify the service scope, responsibilities and expected timelines.</p>
-   </article>
-  </div>
- </div>
+<section id="financial">
+<div class="container">
+<div class="kicker">Financial Education</div>
+<h2>Understand Your Financial Choices</h2>
+<p class="intro">Learn about financial products and connect with appropriately authorised providers where necessary.</p>
+<div class="grid">
+<div class="card"><div class="icon">📈</div><h3>Mutual Funds</h3><p>General information about fund categories, investment horizons, risks and costs. Investments are subject to market risks.</p><a href="https://wa.me/917794097864?text=I%20would%20like%20to%20know%20about%20Mutual%20Fund%20services." target="_blank" rel="noopener">Ask us →</a></div>
+<div class="card"><div class="icon">🏦</div><h3>Loans</h3><p>General information about loan options, eligibility and documentation. Approval depends on the lender.</p><a href="https://wa.me/917794097864?text=I%20would%20like%20information%20about%20Loans." target="_blank" rel="noopener">Ask us →</a></div>
+<div class="card"><div class="icon">💳</div><h3>Credit Cards</h3><p>Learn about eligibility, fees, interest, repayment and responsible credit card use.</p><a href="https://wa.me/917794097864?text=I%20would%20like%20information%20about%20Credit%20Cards." target="_blank" rel="noopener">Ask us →</a></div>
+<div class="card"><div class="icon">🛡️</div><h3>Insurance</h3><p>General information about insurance types, policy features and questions to consider before buying.</p><a href="https://wa.me/917794097864?text=I%20would%20like%20information%20about%20Insurance." target="_blank" rel="noopener">Ask us →</a></div>
+<div class="card"><div class="icon">🧠</div><h3>Financial Literacy</h3><p>Understand budgeting, saving, risk, borrowing and basic financial planning concepts.</p><a href="https://wa.me/917794097864?text=I%20am%20interested%20in%20Financial%20Education." target="_blank" rel="noopener">Learn more →</a></div>
+<div class="card"><div class="icon">🗂️</div><h3>Financial Documentation</h3><p>Assistance organising financial documents for discussion with relevant banks or authorised providers.</p><a href="https://wa.me/917794097864?text=I%20need%20Financial%20Documentation%20support." target="_blank" rel="noopener">Enquire →</a></div>
+</div>
+</div>
 </section>
 
-<section class="contact" id="contact">
- <div class="wrap">
-  <div class="eyebrow">LET'S CONNECT</div>
-  <h2>Ready to organise your next step?</h2>
-  <p>Contact details will be added here once your official business contact information is ready.</p>
-  <a class="btn" href="#services">View Services →</a>
- </div>
+<section class="light" id="contact">
+<div class="container two">
+<div>
+<div class="kicker">Contact Us</div>
+<h2>Let's Discuss Your Requirements</h2>
+<p>Contact FINEDUCATION INSTITUTE to ask about business support, accounts assistance or financial education services.</p>
+<p><strong>Location:</strong> Tekkali, Andhra Pradesh, India</p>
+<p><strong>WhatsApp:</strong> +91 77940 97864</p>
+<a class="btn gold" style="background:#168b58;color:white" href="https://wa.me/917794097864?text=Hello%2C%20I%20would%20like%20to%20discuss%20your%20services." target="_blank" rel="noopener">Message Us on WhatsApp</a>
+</div>
+<div class="contact">
+<h2>How Can We Help?</h2>
+<p>Send us a message with the service you need. We will discuss availability, scope and applicable fees.</p>
+<p><strong>Business name:</strong><br>FINEDUCATION INSTITUTE</p>
+<p><strong>Service area:</strong><br>Tekkali and nearby areas, subject to availability.</p>
+<p><strong>WhatsApp link:</strong><br><a href="https://wa.me/917794097864" target="_blank" rel="noopener">wa.me/917794097864</a></p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<div class="notice">
+<strong>Important Disclaimer:</strong>
+Information on this website is for general educational and informational purposes and is not a guarantee of financial returns, loan approval, tax outcomes or insurance coverage. Mutual fund investments are subject to market risks. Product suitability depends on individual circumstances. Regulated financial distribution, insurance solicitation, tax representation, GST filing and other professional services will be provided only where the required registration, qualification or authorisation is held, or through an appropriately authorised professional. Clients should verify product terms and consult qualified professionals where needed. Service availability and fees are confirmed before engagement.
+</div>
+</div>
 </section>
 </main>
 
 <footer>
- <div class="wrap">
-  <div class="foot">
-   <strong>FINEDUCATION INSTITUTE</strong>
-   <span>Business Support · Accounts · Financial Services</span>
-   <span>© <span id="year">2026</span> FINEDUCATION INSTITUTE</span>
-  </div>
-  <div class="disclaimer">
-   <strong>Disclaimer:</strong> This website provides general information only and is not tax, legal, investment or insurance advice. Investment products are subject to market risks. Product eligibility and loan approvals are not guaranteed. Regulated services and filings may require an appropriately qualified or authorised professional.
-  </div>
- </div>
+<div class="container">
+<p><strong>FINEDUCATION INSTITUTE</strong> | Tekkali, Andhra Pradesh, India</p>
+<p>Business support • Financial education • Documentation assistance</p>
+<p>© <span id="year">2026</span> FINEDUCATION INSTITUTE. All rights reserved.</p>
+</div>
 </footer>
+
+<a class="wa" href="https://wa.me/917794097864?text=Hello%20FINEDUCATION%20INSTITUTE" target="_blank" rel="noopener" aria-label="Contact on WhatsApp">WhatsApp Us</a>
+
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
