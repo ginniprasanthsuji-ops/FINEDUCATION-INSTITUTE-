@@ -1,1 +1,232 @@
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102b46">
+<title>FINEDUCATION INSTITUTE | Business & Finance</title>
+<style>
+:root{--navy:#102b46;--green:#5bd6b0;--light:#f3f8f7;--text:#203447}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.7}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1100px,90%);margin:auto}
+header{position:sticky;top:0;background:white;z-index:10;box-shadow:0 2px 12px #102b4610}
+.nav{min-height:76px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{font-size:19px;font-weight:900;color:var(--navy);line-height:1.2}
+.logo span{color:#159875}
+.logo small{display:block;font-size:10px;letter-spacing:3px;color:#66798a}
+nav{display:flex;gap:24px;align-items:center;font-size:13px;font-weight:bold}
+nav a:hover{color:#159875}
+.btn{display:inline-block;background:var(--green);color:var(--navy);padding:13px 19px;border-radius:8px;font-weight:bold}
+.hero{background:var(--navy);color:white;padding:85px 0 70px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:45px;align-items:center}
+.eyebrow{color:#72e0bd;font-size:11px;font-weight:bold;letter-spacing:2px}
+h1,h2,h3{line-height:1.2}
+h1{font-size:clamp(38px,5.5vw,65px);letter-spacing:-2px;margin:20px 0}
+h1 span,.accent{color:var(--green)}
+.hero p{color:#c7d4df;max-width:550px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn-outline{border:1px solid #ffffff55;color:white;padding:12px 18px;border-radius:8px}
+.visual{background:#ffffff12;border:1px solid #ffffff2b;border-radius:22px;padding:30px}
+.visual .symbol{font-size:62px;color:var(--green)}
+.visual h3{font-size:24px}
+.metric{padding:13px 0;border-bottom:1px solid #ffffff22;color:#d5e2e9}
+.metric:last-child{border:0}
+section{padding:75px 0}
+.heading{text-align:center;max-width:650px;margin:0 auto 38px}
+.heading h2,.about h2{font-size:clamp(30px,4vw,43px);color:var(--navy);margin:12px 0}
+.heading p,.muted{color:#66798a}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{padding:26px;border:1px solid #e0e9eb;border-radius:15px;background:white;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 15px 35px #102b4610}
+.card .icon{font-size:30px}
+.card h3{color:var(--navy);font-size:20px}
+.card p,.card li{font-size:14px;color:#637485}
+.card ul{padding-left:18px}
+.about{background:var(--light)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-panel{background:var(--navy);color:white;border-radius:20px;padding:35px}
+.about-panel h3{font-size:27px}
+.about-panel p{color:#c5d4df}
+.points{padding:0;list-style:none}
+.points li{padding:9px 0}
+.points li:before{content:"✓";color:#159875;font-weight:bold;margin-right:10px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.step{border-top:3px solid var(--green);padding:20px 5px}
+.step b{font-size:30px;color:#159875}
+.step h3{color:var(--navy)}
+.contact{background:var(--navy);color:white;text-align:center}
+.contact h2{font-size:clamp(30px,4vw,44px)}
+.contact p{color:#c5d4df}
+.contact .btn{margin-top:12px}
+footer{background:#0b2034;color:#c5d4df;padding:28px 0;font-size:12px}
+footer .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.disclaimer{font-size:11px;color:#9aafbf;margin-top:20px;border-top:1px solid #ffffff22;padding-top:16px}
+@media(max-width:760px){
+ .nav{padding:14px 0;align-items:flex-start;flex-direction:column}
+ nav{gap:14px;flex-wrap:wrap}
+ .hero{padding:58px 0}
+ .hero-grid,.about-grid{grid-template-columns:1fr;gap:28px}
+ .cards,.steps{grid-template-columns:1fr}
+ section{padding:55px 0}
+ .visual{padding:23px}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#home">F<span>+</span> FINEDUCATION
+   <small>INSTITUTE</small></a>
+  <nav aria-label="Main navigation">
+   <a href="#services">Services</a>
+   <a href="#about">About</a>
+   <a href="#process">Our Process</a>
+   <a href="#contact">Contact</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">BUSINESS SUPPORT · FINANCIAL SERVICES</div>
+   <h1>Build smarter.<br>Manage better.<br><span>Grow with clarity.</span></h1>
+   <p>Practical support for business accounts, GST-related processes and financial-service needs. Make better-informed decisions with organised information.</p>
+   <div class="actions">
+    <a class="btn" href="#services">Explore Our Services →</a>
+    <a class="btn-outline" href="#about">About Us</a>
+   </div>
+  </div>
+  <div class="visual">
+   <div class="symbol">₹</div>
+   <h3>Your business.<br>Your financial future.</h3>
+   <div class="metric">✓ Accounts & records support</div>
+   <div class="metric">✓ Business performance tracking</div>
+   <div class="metric">✓ Financial product information</div>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <div class="heading">
+   <div class="eyebrow">OUR SERVICES</div>
+   <h2>Support for your next step</h2>
+   <p>Explore our service areas for individuals, small businesses and local entrepreneurs.</p>
+  </div>
+  <div class="cards">
+   <article class="card">
+    <div class="icon">📊</div>
+    <h3>Accounts & GST Support</h3>
+    <p>Keep business information organised and make record management easier.</p>
+    <ul>
+     <li>Bookkeeping assistance</li>
+     <li>Invoice and expense records</li>
+     <li>GST documentation and return-related support</li>
+     <li>Tax document organisation</li>
+    </ul>
+   </article>
+   <article class="card">
+    <div class="icon">📈</div>
+    <h3>Business Management</h3>
+    <p>Understand your business activity through useful summaries and organised data.</p>
+    <ul>
+     <li>Cash-flow tracking</li>
+     <li>MIS reports and summaries</li>
+     <li>Business finance documentation</li>
+     <li>Planning and performance review</li>
+    </ul>
+   </article>
+   <article class="card">
+    <div class="icon">💼</div>
+    <h3>Financial Services</h3>
+    <p>Get information to help you understand financial products and application processes.</p>
+    <ul>
+     <li>Mutual fund information</li>
+     <li>Investment and portfolio education</li>
+     <li>Loan and credit-card process guidance</li>
+     <li>Life, term and motor insurance information</li>
+    </ul>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="about" id="about">
+ <div class="wrap about-grid">
+  <div class="about-panel">
+   <div class="eyebrow">FINEDUCATION INSTITUTE</div>
+   <h3>Clear information.<br>Confident decisions.</h3>
+   <p>Helping people and businesses better understand records, financial processes and available service options.</p>
+  </div>
+  <div>
+   <div class="eyebrow">ABOUT US</div>
+   <h2>Practical guidance for real business needs.</h2>
+   <p class="muted">Our aim is to make complex processes easier to understand, help business owners organise information and guide customers towards appropriate next steps.</p>
+   <ul class="points">
+    <li>Simple, understandable communication</li>
+    <li>Organised records and documentation</li>
+    <li>Business-focused support</li>
+    <li>Transparent service scope and expectations</li>
+   </ul>
+  </div>
+ </div>
+</section>
+
+<section id="process">
+ <div class="wrap">
+  <div class="heading">
+   <div class="eyebrow">HOW WE WORK</div>
+   <h2>A simple, clear process</h2>
+   <p>Start with your requirement and agree on the next steps.</p>
+  </div>
+  <div class="steps">
+   <article class="step">
+    <b>01</b><h3>Share your need</h3>
+    <p class="muted">Tell us which business or financial-service support you are looking for.</p>
+   </article>
+   <article class="step">
+    <b>02</b><h3>Review the details</h3>
+    <p class="muted">Identify relevant information, documents and requirements.</p>
+   </article>
+   <article class="step">
+    <b>03</b><h3>Plan the next step</h3>
+    <p class="muted">Clarify the service scope, responsibilities and expected timelines.</p>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div class="eyebrow">LET'S CONNECT</div>
+  <h2>Ready to organise your next step?</h2>
+  <p>Contact details will be added here once your official business contact information is ready.</p>
+  <a class="btn" href="#services">View Services →</a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="foot">
+   <strong>FINEDUCATION INSTITUTE</strong>
+   <span>Business Support · Accounts · Financial Services</span>
+   <span>© <span id="year">2026</span> FINEDUCATION INSTITUTE</span>
+  </div>
+  <div class="disclaimer">
+   <strong>Disclaimer:</strong> This website provides general information only and is not tax, legal, investment or insurance advice. Investment products are subject to market risks. Product eligibility and loan approvals are not guaranteed. Regulated services and filings may require an appropriately qualified or authorised professional.
+  </div>
+ </div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
