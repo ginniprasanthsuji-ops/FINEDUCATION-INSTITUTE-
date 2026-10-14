@@ -437,19 +437,9 @@ footer {
                autocomplete="name" placeholder="Enter your name" required>
       </div>
 
-      <label for="authEmail">Email Address</label>
+      <label for="authEmail">Email Address (optional)</label>
       <input id="authEmail" name="email" type="email"
-       autocomplete="email" placeholder="you@example.com" required
-<div id="passwordWrap">
-  <label for="authPassword">Password</label>
-  <input id="authPassword"
-         name="password"
-         type="password"
-         autocomplete="current-password"
-         placeholder="Enter password"
-         minlength="6">
-</div>
-      
+             autocomplete="email" placeholder="you@example.com">
 
       <label for="authPhone">Mobile Number</label>
       <input id="authPhone" name="phone" type="tel"
@@ -485,28 +475,7 @@ footer {
   </div>
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyB8_sOT31rFf7CZH54v4fY0mj6BD5Y4Mjw",
-  authDomain: "fineducation-institute.firebaseapp.com",
-  projectId: "fineducation-institute",
-  storageBucket: "fineducation-institute.firebasestorage.app",
-  messagingSenderId: "222076689124",
-  appId: "1:222076689124:web:a8762658eb02051406aaf1"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
+<script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
 let authMode = "signup";
@@ -543,36 +512,18 @@ function updateAuth() {
   document.getElementById("fullName").required = signup;
 }
 
-
-async function submitAuth(event) {
+function submitAuth(event) {
   event.preventDefault();
 
+  const name = document.getElementById("fullName").value.trim();
   const email = document.getElementById("authEmail").value.trim();
-  const password = document.getElementById("authPassword").value;
+  const phone = document.getElementById("authPhone").value.trim();
+  const interest = document.getElementById("interest").value;
 
-  try {
-    if (authMode === "signup") {
-      await createUserWithEmailAndPassword(auth, email, password);
-      alert("Account created successfully!");
-    } else {
-      await signInWithEmailAndPassword(auth, email, password);
-      alert("Login successful!");
-    }
-
-    closeAuth();
-  } catch (error) {
-    if (error.code === "auth/email-already-in-use") {
-      alert("This email is already registered. Please Login.");
-    } else if (error.code === "auth/invalid-credential") {
-      alert("Incorrect email or password.");
-    } else if (error.code === "auth/weak-password") {
-      alert("Password must be at least 6 characters.");
-    } else {
-      alert("Error: " + error.message);
-    }
+  if (!phone) {
+    alert("Please enter your mobile number.");
+    return;
   }
-}
-
 
   const type = authMode === "signup"
     ? "New service enquiry"
@@ -653,13 +604,6 @@ async function loadMarketUpdates() {
   }
 }
 
-
-Object.assign(window, {
-  openAuth,
-  closeAuth,
-  switchAuth,
-  submitAuth
-});
 loadMarketUpdates();
 </script>
 
