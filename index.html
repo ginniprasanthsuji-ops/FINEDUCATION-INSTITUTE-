@@ -1,152 +1,12 @@
 
-<!-- Financial Professional Profile -->
-<section class="profile-section">
-  <div class="profile-card">
-    <img
-      src="./prasanth.jpg"
-      alt="Ginni Prasanth Reddy"
-      class="profile-photo"
-    />
-
-    <div class="profile-details">
-      <p class="profile-label">ABOUT THE PROFESSIONAL</p>
-      <h2>Ginni Prasanth Reddy</h2>
-      <p class="profile-role">
-        Financial Services Professional
-      </p>
-
-      <p>
-        AMFI-Registered Mutual Fund Distributor
-      </p>
-      <p><strong>ARN:</strong> 277739</p>
-
-      <p class="profile-note">
-        Research Analyst: Not SEBI-registered.
-      </p>
-
-      <p class="profile-note">
-        SBI Mutual Fund employment details, if displayed,
-        are subject to official confirmation and applicable
-        employer approval.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Disclaimer -->
-<section class="disclaimer-section">
-  <h2>Disclaimer</h2>
-
-  <p>
-    FINEDUCATION INSTITUTE provides financial education
-    and information about financial services. Mutual fund
-    distribution services are subject to valid registration,
-    applicable regulations and required AMC empanelment.
-  </p>
-
-  <p>
-    ARN 277739 identifies the stated mutual fund distributor
-    registration. It is not a SEBI stockbroker registration
-    or a SEBI Research Analyst registration.
-  </p>
-
-  <p>
-    Ginni Prasanth Reddy is not claiming to be a
-    SEBI-Registered Research Analyst. Research analyst
-    services are not offered under such a registration.
-  </p>
-
-  <p>
-    Mutual fund investments are subject to market risks.
-    Read all scheme-related documents carefully.
-    Returns are not guaranteed.
-  </p>
-
-  <p>
-    FINEDUCATION INSTITUTE is an informational website
-    and should not be understood as the official website
-    of SBI Mutual Fund unless formally authorised.
-  </p>
-</section>
-
-<style>
-.profile-section,
-.disclaimer-section {
-  max-width: 1000px;
-  margin: 32px auto;
-  padding: 24px;
-  font-family: Arial, sans-serif;
-}
-
-.profile-card {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 24px;
-  background: #f5f8fc;
-  border: 1px solid #dce5ef;
-  border-radius: 16px;
-}
-
-.profile-photo {
-  width: 180px;
-  height: 220px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 12px;
-}
-
-.profile-label {
-  color: #b88725;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.profile-details h2 {
-  color: #082b50;
-  margin-bottom: 8px;
-}
-
-.profile-role {
-  font-weight: 600;
-}
-
-.profile-note {
-  color: #555;
-  font-size: 14px;
-}
-
-.disclaimer-section {
-  background: #fff;
-  border-top: 3px solid #d8ad49;
-  line-height: 1.7;
-  color: #333;
-}
-
-.disclaimer-section h2 {
-  color: #082b50;
-}
-
-@media (max-width: 600px) {
-  .profile-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .profile-photo {
-    width: 150px;
-    height: 180px;
-  }
-}
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="FINEDUCATION INSTITUTE - Mutual fund education, loan assistance, ITR-1 tax support and business services in Tekkali.">
-<title>FINEDUCATION INSTITUTE | Financial Services</title>
+<meta name="description" content="FINEDUCATION INSTITUTE - Financial education, mutual funds, loan assistance, tax and business support.">
+<title>FINEDUCATION INSTITUTE | Financial & Business Services</title>
+
 <style>
 :root {
   --navy:#102544;
@@ -156,73 +16,197 @@
   --text:#273449;
   --muted:#68768a;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;color:var(--text);line-height:1.65}
-a{text-decoration:none}
-button,input,select{font:inherit}
-.container{width:min(1120px,92%);margin:auto}
-header{background:var(--navy);color:white;position:sticky;top:0;z-index:20}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0;flex-wrap:wrap}
-.brand{font-size:20px;font-weight:800;color:white}
-.brand span{color:var(--gold)}
-nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-nav a,nav summary{font-size:13px;color:white;cursor:pointer}
-.service-menu{position:relative}
-.service-menu summary{list-style:none}
-.service-menu summary:after{content:" ▾";color:var(--gold)}
-.dropdown{position:absolute;top:28px;left:0;background:white;min-width:210px;padding:8px;border-radius:10px;box-shadow:0 12px 30px #0002}
-.dropdown a{display:block;color:var(--navy);padding:10px;border-radius:6px}
-.dropdown a:hover{background:var(--light)}
-.actions{display:flex;gap:8px}
-.btn{display:inline-block;padding:11px 16px;border:0;border-radius:8px;font-weight:700;cursor:pointer}
-.primary{background:var(--gold);color:var(--navy)}
-.secondary{border:1px solid #d8e0ec;color:white;background:transparent}
-.hero{background:linear-gradient(125deg,var(--navy),var(--blue));color:white;padding:72px 0}
-.tag{color:var(--gold);font-size:12px;letter-spacing:2px;font-weight:bold}
-h1{font-size:clamp(35px,6vw,58px);line-height:1.12;margin:18px 0}
-.hero p{max-width:650px;color:#e0e7f0}
-.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.pills{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
-.pill{background:#ffffff18;border:1px solid #ffffff40;padding:6px 11px;border-radius:30px;font-size:12px}
-section{padding:55px 0}
-.light{background:var(--light)}
-.kicker{font-size:12px;font-weight:bold;letter-spacing:1.5px;color:#986916;text-transform:uppercase}
-h2{color:var(--navy);font-size:clamp(26px,4vw,36px);line-height:1.3;margin:8px 0 12px}
-.intro{max-width:700px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
-.card{background:white;border:1px solid #e3eaf2;border-radius:14px;padding:23px;box-shadow:0 7px 22px #1025440a}
-.card .icon{font-size:30px}
-.card h3{color:var(--navy);margin:10px 0 5px}
-.card p{color:var(--muted);font-size:14px}
-.card a{color:#8b641d;font-size:13px;font-weight:bold}
-.card .category{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#986916;font-weight:bold}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-.notice{background:#fff7e6;border-left:4px solid var(--gold);padding:16px;border-radius:6px;font-size:13px}
-.contact-panel{background:var(--navy);color:white;border-radius:14px;padding:25px}
-.contact-panel h2{color:white}
-.contact-panel a{color:var(--gold)}
-footer{background:#09172b;color:#d4dce7;padding:25px 0;font-size:12px}
-.whatsapp{position:fixed;bottom:16px;right:16px;background:#168b58;color:white;padding:13px 17px;border-radius:35px;z-index:10;font-weight:bold;box-shadow:0 5px 20px #0003}
-.modal{display:none;position:fixed;inset:0;background:#08172bd9;z-index:50;align-items:center;justify-content:center;padding:16px}
-.modal.open{display:flex}
-.panel{background:white;border-radius:16px;padding:24px;width:min(440px,100%);max-height:90vh;overflow:auto}
-.panel h2{margin-top:0}
-.panel label{display:block;font-size:13px;font-weight:bold;margin:12px 0 5px}
-.panel input,.panel select{width:100%;padding:12px;border:1px solid #ccd6e3;border-radius:8px}
-.close{float:right;border:0;border-radius:7px;padding:7px 10px;cursor:pointer}
-.small{font-size:12px;color:var(--muted);background:var(--light);padding:11px;border-radius:8px}
-@media(max-width:800px){
- .grid{grid-template-columns:1fr}
- .two{grid-template-columns:1fr}
- .hero{padding:48px 0}
- nav{gap:12px}
- .nav{align-items:flex-start}
- .dropdown{position:static;margin-top:8px}
- .actions{width:100%}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  color:var(--text);
+  line-height:1.65;
+}
+a { text-decoration:none; }
+button,input,select { font:inherit; }
+.container { width:min(1100px,92%); margin:auto; }
+
+header {
+  background:var(--navy);
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+.nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:14px 0;
+  flex-wrap:wrap;
+}
+.brand {
+  font-size:20px;
+  font-weight:bold;
+  color:white;
+}
+.brand span { color:var(--gold); }
+nav {
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+nav a { color:white; font-size:14px; }
+.actions { display:flex; gap:8px; }
+
+.btn {
+  display:inline-block;
+  padding:10px 15px;
+  border:0;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+.primary { background:var(--gold); color:var(--navy); }
+.secondary { background:transparent; color:white; border:1px solid white; }
+
+.hero {
+  background:linear-gradient(125deg,var(--navy),var(--blue));
+  color:white;
+  padding:65px 0;
+}
+.tag {
+  color:var(--gold);
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+h1 {
+  font-size:clamp(35px,6vw,56px);
+  line-height:1.15;
+  margin:15px 0;
+}
+.hero p { max-width:650px; color:#e0e7f0; }
+.hero-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:22px; }
+
+section { padding:48px 0; }
+.light { background:var(--light); }
+.kicker {
+  color:#986916;
+  font-size:12px;
+  font-weight:bold;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+h2 { color:var(--navy); line-height:1.3; }
+.intro { max-width:720px; color:var(--muted); }
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+  margin-top:25px;
+}
+.card {
+  background:white;
+  padding:22px;
+  border:1px solid #e3eaf2;
+  border-radius:14px;
+  box-shadow:0 5px 18px #1025440a;
+}
+.card .icon { font-size:29px; }
+.card h3 { color:var(--navy); margin:8px 0; }
+.card p { color:var(--muted); font-size:14px; }
+.card a { color:#8b641d; font-weight:bold; font-size:14px; }
+
+.two {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+.notice {
+  padding:16px;
+  background:#fff7e6;
+  border-left:4px solid var(--gold);
+  font-size:13px;
+}
+.contact-panel {
+  background:var(--navy);
+  color:white;
+  padding:24px;
+  border-radius:14px;
+}
+.contact-panel h2 { color:white; }
+
+footer {
+  background:#09172b;
+  color:#d4dce7;
+  padding:25px 0;
+  font-size:13px;
+}
+.whatsapp {
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  z-index:9;
+  background:#168b58;
+  color:white;
+  padding:12px 16px;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:30;
+  background:#08172bd9;
+  padding:15px;
+  align-items:center;
+  justify-content:center;
+}
+.modal.open { display:flex; }
+.panel {
+  background:white;
+  border-radius:14px;
+  padding:22px;
+  width:min(440px,100%);
+  max-height:90vh;
+  overflow:auto;
+}
+.panel label {
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+  margin:12px 0 5px;
+}
+.panel input,.panel select {
+  display:block;
+  width:100%;
+  padding:11px;
+  border:1px solid #ccd6e3;
+  border-radius:8px;
+}
+.close { float:right; padding:6px 10px; cursor:pointer; }
+.small { color:var(--muted); font-size:12px; }
+.market-post {
+  background:white;
+  border:1px solid #e3eaf2;
+  border-radius:10px;
+  padding:16px;
+  margin:14px 0;
+}
+.market-post h3 { color:var(--navy); }
+
+@media(max-width:800px) {
+  .grid,.two { grid-template-columns:1fr; }
+  .hero { padding:45px 0; }
+  .nav { align-items:flex-start; }
+  nav { gap:11px; }
+  .actions { width:100%; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -230,21 +214,16 @@ footer{background:#09172b;color:#d4dce7;padding:25px 0;font-size:12px}
     <a class="brand" href="#home">FIN<span>EDUCATION</span></a>
     <nav>
       <a href="#home">Home</a>
-      <details class="service-menu">
-        <summary>Services</summary>
-        <div class="dropdown">
-          <a href="#mutual-funds">Mutual Funds</a>
-          <a href="#loans">Loans</a>
-          <a href="#tax-filing">ITR-1 / Tax Filing</a>
-          <a href="#business-services">GST & Accounts</a>
-        </div>
-      </details>
+      <a href="#services">Services</a>
       <a href="#about">About</a>
+      <a href="#market-updates">Market Updates</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="actions">
-      <button class="btn secondary" onclick="openAuth('login')">Login</button>
-      <button class="btn primary" onclick="openAuth('signup')">Sign Up</button>
+      <button class="btn secondary" type="button"
+        onclick="openAuth('login')">Login</button>
+      <button class="btn primary" type="button"
+        onclick="openAuth('signup')">Sign Up</button>
     </div>
   </div>
 </header>
@@ -254,108 +233,140 @@ footer{background:#09172b;color:#d4dce7;padding:25px 0;font-size:12px}
   <div class="container">
     <div class="tag">YOUR FINANCIAL SERVICES PLATFORM</div>
     <h1>Your Financial Journey,<br>Simplified.</h1>
-    <p>Explore mutual fund information, loan assistance, income tax return support and business services in one place.</p>
+    <p>
+      Financial education, mutual fund information,
+      loan assistance, tax support and business services
+      — all in one place.
+    </p>
     <div class="hero-actions">
-      <a class="btn primary" href="#platform-services">Explore Services →</a>
-      <a class="btn secondary" href="https://wa.me/917794097864" target="_blank" rel="noopener">Talk to Our Team</a>
-    </div>
-    <div class="pills">
-      <span class="pill">Mutual Fund Education</span>
-      <span class="pill">Loan Assistance</span>
-      <span class="pill">ITR-1 Support</span>
-      <span class="pill">Business Services</span>
+      <a class="btn primary" href="#services">Explore Services →</a>
+      <a class="btn secondary"
+        href="https://wa.me/917794097864"
+        target="_blank" rel="noopener">Contact Us</a>
     </div>
   </div>
 </section>
 
-<section id="platform-services">
+<section id="services">
   <div class="container">
-    <div class="kicker">Explore Our Platform</div>
-    <h2>What can we help you with?</h2>
-    <p class="intro">Choose a service to view details and send an enquiry. Fees and scope will be discussed before engagement.</p>
+    <div class="kicker">Our Services</div>
+    <h2>How Can We Help You?</h2>
+    <p class="intro">
+      Choose a service and contact us to discuss your requirements.
+      Scope, eligibility and applicable fees will be explained first.
+    </p>
+
     <div class="grid">
-      <article class="card" id="mutual-funds">
+      <article class="card">
         <div class="icon">📈</div>
-        <div class="category">Investment Education</div>
         <h3>Mutual Funds</h3>
-        <p>Understand fund categories, risk, costs, investment horizons and basic investing concepts.</p>
-        <a href="https://wa.me/917794097864?text=Hello%2C%20I%20want%20to%20enquire%20about%20Mutual%20Funds." target="_blank" rel="noopener">Explore Mutual Funds →</a>
+        <p>Learn about fund categories, risk, costs and investment horizons.</p>
+        <a href="https://wa.me/917794097864?text=I%20want%20to%20enquire%20about%20mutual%20funds"
+           target="_blank" rel="noopener">Enquire →</a>
       </article>
-      <article class="card" id="loans">
+
+      <article class="card">
         <div class="icon">🏦</div>
-        <div class="category">Borrowing Assistance</div>
-        <h3>Loans</h3>
-        <p>Learn about loan options, common eligibility requirements, documentation and repayment costs.</p>
-        <a href="https://wa.me/917794097864?text=Hello%2C%20I%20want%20to%20enquire%20about%20Loans." target="_blank" rel="noopener">Explore Loans →</a>
+        <h3>Loan Assistance</h3>
+        <p>Understand loan options, eligibility and required documents.</p>
+        <a href="https://wa.me/917794097864?text=I%20want%20loan%20assistance"
+           target="_blank" rel="noopener">Enquire →</a>
       </article>
-      <article class="card" id="tax-filing">
+
+      <article class="card">
         <div class="icon">🧾</div>
-        <div class="category">Income Tax</div>
-        <h3>ITR-1 / Tax Filing</h3>
-        <p>Get help organising income and tax documents and understanding whether ITR-1 applies to you.</p>
-        <a href="https://wa.me/917794097864?text=Hello%2C%20I%20need%20help%20with%20ITR-1%20and%20tax%20filing." target="_blank" rel="noopener">Enquire About ITR-1 →</a>
+        <h3>ITR & Tax Support</h3>
+        <p>Organise income records and understand applicable tax filing options.</p>
+        <a href="https://wa.me/917794097864?text=I%20need%20tax%20filing%20support"
+           target="_blank" rel="noopener">Enquire →</a>
+      </article>
+
+      <article class="card">
+        <div class="icon">📒</div>
+        <h3>Accounts & Bookkeeping</h3>
+        <p>Organise sales, purchases, expenses and payment records.</p>
+        <a href="https://wa.me/917794097864?text=I%20need%20accounts%20support"
+           target="_blank" rel="noopener">Enquire →</a>
+      </article>
+
+      <article class="card">
+        <div class="icon">🧮</div>
+        <h3>GST Support</h3>
+        <p>Invoice records, GST document organisation and compliance assistance.</p>
+        <a href="https://wa.me/917794097864?text=I%20need%20GST%20support"
+           target="_blank" rel="noopener">Enquire →</a>
+      </article>
+
+      <article class="card">
+        <div class="icon">📊</div>
+        <h3>MIS & Cash Flow</h3>
+        <p>Track business income, expenses, cash flow and basic performance.</p>
+        <a href="https://wa.me/917794097864?text=I%20need%20MIS%20and%20cash%20flow%20support"
+           target="_blank" rel="noopener">Enquire →</a>
+      </article>
+
+      <article class="card">
+        <div class="icon">🛡️</div>
+        <h3>Insurance Information</h3>
+        <p>Understand policy features, exclusions and important questions.</p>
+        <a href="https://wa.me/917794097864?text=I%20need%20insurance%20information"
+           target="_blank" rel="noopener">Enquire →</a>
+      </article>
+
+      <article class="card">
+        <div class="icon">📁</div>
+        <h3>Business Documentation</h3>
+        <p>Organise records for discussions with banks and qualified professionals.</p>
+        <a href="https://wa.me/917794097864?text=I%20need%20business%20documentation%20support"
+           target="_blank" rel="noopener">Enquire →</a>
+      </article>
+
+      <article class="card">
+        <div class="icon">🎓</div>
+        <h3>Financial Education</h3>
+        <p>Build your understanding of savings, investments and business finance.</p>
+        <a href="https://wa.me/917794097864?text=I%20want%20financial%20education"
+           target="_blank" rel="noopener">Enquire →</a>
       </article>
     </div>
   </div>
 </section>
 
-<section class="light" id="business-services">
-  <div class="container">
-    <div class="kicker">Business Support</div>
-    <h2>Services for Individuals & Small Businesses</h2>
-    <p class="intro">Practical support for better records, business reporting and financial understanding.</p>
-    <div class="grid">
-      <article class="card">
-        <div class="icon">📒</div><h3>Accounts & Bookkeeping</h3>
-        <p>Organising sales, purchases, expenses, receipts and payment records.</p>
-        <a href="https://wa.me/917794097864?text=I%20need%20Accounts%20and%20Bookkeeping%20support." target="_blank" rel="noopener">Enquire →</a>
-      </article>
-      <article class="card">
-        <div class="icon">🧮</div><h3>GST Support</h3>
-        <p>Invoice records, GST document organisation and return-related assistance, subject to applicable authorisation.</p>
-        <a href="https://wa.me/917794097864?text=I%20need%20GST%20support." target="_blank" rel="noopener">Enquire →</a>
-      </article>
-      <article class="card">
-        <div class="icon">📊</div><h3>MIS & Cash Flow</h3>
-        <p>Sales and expense summaries, cash flow tracking and basic business performance reports.</p>
-        <a href="https://wa.me/917794097864?text=I%20need%20MIS%20and%20Cash%20Flow%20support." target="_blank" rel="noopener">Enquire →</a>
-      </article>
-      <article class="card">
-        <div class="icon">🛡️</div><h3>Insurance Information</h3>
-        <p>Understand insurance types, policy features, exclusions and questions to ask before purchasing.</p>
-        <a href="https://wa.me/917794097864?text=I%20need%20Insurance%20information." target="_blank" rel="noopener">Enquire →</a>
-      </article>
-      <article class="card">
-        <div class="icon">💳</div><h3>Credit Card Education</h3>
-        <p>Learn about charges, interest, repayment dates and responsible credit use.</p>
-        <a href="https://wa.me/917794097864?text=I%20need%20Credit%20Card%20information." target="_blank" rel="noopener">Enquire →</a>
-      </article>
-      <article class="card">
-        <div class="icon">📁</div><h3>Business Documentation</h3>
-        <p>Organise business records for discussion with banks, lenders or qualified professionals.</p>
-        <a href="https://wa.me/917794097864?text=I%20need%20Business%20Documentation%20support." target="_blank" rel="noopener">Enquire →</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="about">
+<section class="light" id="about">
   <div class="container two">
     <div>
       <div class="kicker">About Us</div>
-      <h2>Financial Clarity for Better Decisions</h2>
-      <p>FINEDUCATION INSTITUTE aims to make financial concepts and business information easier to understand. We support individuals and local businesses with financial education, document organisation and business reporting assistance.</p>
-      <p>Our service area is Tekkali, Andhra Pradesh, and nearby locations subject to availability.</p>
+      <h2>FINEDUCATION INSTITUTE</h2>
+      <p>
+        Our goal is to make financial concepts easier to understand
+        and support individuals and small businesses with practical
+        financial education and organised business records.
+      </p>
+      <p><strong>Service area:</strong> Tekkali, Andhra Pradesh, India</p>
     </div>
     <div class="card">
-      <h3>Why Choose Us?</h3>
+      <h3>Our Approach</h3>
       <ul>
-        <li>Simple, practical explanations</li>
-        <li>Clear communication about service scope</li>
+        <li>Simple explanations</li>
+        <li>Clear service scope and fees</li>
         <li>Business record organisation</li>
-        <li>Financial awareness and education</li>
-        <li>Contact us before sharing sensitive documents</li>
+        <li>Financial awareness</li>
+        <li>Responsible handling of information</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section id="market-updates">
+  <div class="container">
+    <div class="kicker">Learn & Stay Informed</div>
+    <h2>Market Updates | మార్కెట్ సమాచారం</h2>
+    <p class="intro">
+      Educational information about mutual funds, stocks and ETFs.
+      This section is not a live price feed or a buy/sell recommendation.
+    </p>
+    <div id="market-posts">
+      <p>Market information loading...</p>
     </div>
   </div>
 </section>
@@ -365,16 +376,19 @@ footer{background:#09172b;color:#d4dce7;padding:25px 0;font-size:12px}
     <div>
       <div class="kicker">Contact Us</div>
       <h2>Let's Discuss Your Requirements</h2>
-      <p>Have a question about mutual funds, loans, ITR-1 or business support? Contact us to discuss the service you need.</p>
+      <p>Send us a WhatsApp enquiry about the service you need.</p>
       <p><strong>Location:</strong> Tekkali, Andhra Pradesh, India</p>
       <p><strong>WhatsApp:</strong> +91 77940 97864</p>
-      <a class="btn primary" href="https://wa.me/917794097864?text=Hello%2C%20I%20would%20like%20to%20discuss%20your%20services." target="_blank" rel="noopener">Message on WhatsApp</a>
+      <a class="btn primary"
+         href="https://wa.me/917794097864?text=Hello%20FINEDUCATION%20INSTITUTE"
+         target="_blank" rel="noopener">Message on WhatsApp</a>
     </div>
     <div class="contact-panel">
-      <h2>How can we help?</h2>
-      <p>Send us a message with your preferred service. We will discuss availability, scope and applicable fees.</p>
-      <p><strong>FINEDUCATION INSTITUTE</strong></p>
-      <p><a href="https://wa.me/917794097864" target="_blank" rel="noopener">Open WhatsApp →</a></p>
+      <h2>Need Business Support?</h2>
+      <p>Discuss accounts, records, GST support and cash-flow reporting.</p>
+      <a class="btn primary"
+         href="https://wa.me/917794097864?text=I%20want%20to%20discuss%20business%20support"
+         target="_blank" rel="noopener">Contact Our Team</a>
     </div>
   </div>
 </section>
@@ -383,7 +397,14 @@ footer{background:#09172b;color:#d4dce7;padding:25px 0;font-size:12px}
   <div class="container">
     <div class="notice">
       <strong>Important Disclaimer:</strong>
-      This website provides general educational information and does not guarantee investment returns, loan approval, tax outcomes or insurance coverage. Mutual fund investments are subject to market risks. Regulated financial distribution, insurance solicitation, tax filing, GST filing and professional services will be provided only where applicable qualifications, registrations or authorisations are held, or through appropriately authorised professionals. Always verify product terms and service eligibility.
+      This website provides general financial education and service
+      information. It does not guarantee investment returns, loan approval,
+      tax outcomes or insurance coverage. Mutual fund investments are
+      subject to market risks. Regulated services will be provided only
+      where the required registrations, qualifications and authorisations
+      are held, or through appropriately authorised professionals.
+      FINEDUCATION INSTITUTE is not represented as an official website
+      of any bank, AMC or government authority.
     </div>
   </div>
 </section>
@@ -391,45 +412,66 @@ footer{background:#09172b;color:#d4dce7;padding:25px 0;font-size:12px}
 
 <footer>
   <div class="container">
-    <p><strong>FINEDUCATION INSTITUTE</strong> | Tekkali, Andhra Pradesh, India</p>
+    <p><strong>FINEDUCATION INSTITUTE</strong></p>
     <p>Financial Education • Business Support • Documentation Assistance</p>
-    <p>© <span id="year">2026</span> FINEDUCATION INSTITUTE. All rights reserved.</p>
+    <p>© <span id="year"></span> FINEDUCATION INSTITUTE. All rights reserved.</p>
   </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/917794097864?text=Hello%20FINEDUCATION%20INSTITUTE" target="_blank" rel="noopener">WhatsApp Us</a>
+<a class="whatsapp"
+   href="https://wa.me/917794097864?text=Hello%20FINEDUCATION%20INSTITUTE"
+   target="_blank" rel="noopener">WhatsApp Us</a>
 
-<div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle" onclick="if(event.target===this)closeAuth()">
+<div class="modal" id="authModal"
+     role="dialog" aria-modal="true" aria-labelledby="authTitle"
+     onclick="if(event.target===this)closeAuth()">
   <div class="panel">
     <button class="close" type="button" onclick="closeAuth()">Close ✕</button>
     <h2 id="authTitle">Sign Up</h2>
-    <p id="authSubtitle">Register your interest with FINEDUCATION INSTITUTE.</p>
+    <p id="authSubtitle">Send an enquiry to our team.</p>
+
     <form id="authForm" onsubmit="submitAuth(event)">
       <div id="nameWrap">
         <label for="fullName">Full Name</label>
-        <input id="fullName" autocomplete="name" placeholder="Enter your name" required>
+        <input id="fullName" name="fullName"
+               autocomplete="name" placeholder="Enter your name" required>
       </div>
-      <label for="authEmail">Email Address</label>
-      <input id="authEmail" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+      <label for="authEmail">Email Address (optional)</label>
+      <input id="authEmail" name="email" type="email"
+             autocomplete="email" placeholder="you@example.com">
+
       <label for="authPhone">Mobile Number</label>
-      <input id="authPhone" type="tel" autocomplete="tel" placeholder="Your contact number" required>
-      <div id="passwordWrap">
-        <label for="authPassword">Password (demo only)</label>
-        <input id="authPassword" type="password" minlength="8" autocomplete="current-password" placeholder="At least 8 characters">
-      </div>
+      <input id="authPhone" name="phone" type="tel"
+             autocomplete="tel" placeholder="Your contact number" required>
+
       <label for="interest">Service of Interest</label>
-      <select id="interest">
+      <select id="interest" name="interest">
         <option>Mutual Funds</option>
         <option>Loans</option>
-        <option>ITR-1 / Tax Filing</option>
+        <option>ITR / Tax Support</option>
         <option>GST Support</option>
         <option>Accounts & Bookkeeping</option>
+        <option>MIS & Cash Flow</option>
+        <option>Insurance Information</option>
+        <option>Financial Education</option>
         <option>Other</option>
       </select>
-      <button class="btn primary" style="width:100%;margin-top:16px" type="submit">Continue to WhatsApp</button>
+
+      <button class="btn primary" type="submit"
+              style="width:100%;margin-top:16px">
+        Continue to WhatsApp
+      </button>
     </form>
-    <p class="small">Demo only: this form does not create an account or store your details. Do not enter a real password, OTP, PAN or bank information. Real secure login requires an authentication service.</p>
-    <button class="btn secondary" style="background:var(--navy)" type="button" onclick="switchAuth()">Switch Login / Sign Up</button>
+
+    <p class="small">
+      This is an enquiry form, not a real account login.
+      Do not submit passwords, OTPs, PAN or bank details.
+    </p>
+    <button class="btn secondary" type="button"
+            style="background:var(--navy)" onclick="switchAuth()">
+      Switch Login / Sign Up
+    </button>
   </div>
 </div>
 
@@ -455,84 +497,115 @@ function switchAuth() {
 
 function updateAuth() {
   const signup = authMode === "signup";
-  document.getElementById("authTitle").textContent = signup ? "Sign Up" : "Login";
-  document.getElementById("authSubtitle").textContent = signup
-    ? "Register your interest with FINEDUCATION INSTITUTE."
-    : "Enter your contact details to continue to WhatsApp.";
-  document.getElementById("nameWrap").style.display = signup ? "block" : "none";
+
+  document.getElementById("authTitle").textContent =
+    signup ? "Sign Up" : "Login Enquiry";
+
+  document.getElementById("authSubtitle").textContent =
+    signup
+      ? "Please enter your details to contact our team."
+      : "Enter your contact details to continue to WhatsApp.";
+
+  document.getElementById("nameWrap").style.display =
+    signup ? "block" : "none";
+
   document.getElementById("fullName").required = signup;
-  document.getElementById("passwordWrap").style.display = signup ? "none" : "block";
-  document.getElementById("authPassword").required = false;
 }
 
-  function submitAuth(event) {
+function submitAuth(event) {
   event.preventDefault();
 
   const name = document.getElementById("fullName").value.trim();
   const email = document.getElementById("authEmail").value.trim();
   const phone = document.getElementById("authPhone").value.trim();
   const interest = document.getElementById("interest").value;
-  const type = authMode === "signup" ? "Sign-up enquiry" : "Login assistance enquiry";
+
+  if (!phone) {
+    alert("Please enter your mobile number.");
+    return;
+  }
+
+  const type = authMode === "signup"
+    ? "New service enquiry"
+    : "Returning visitor enquiry";
 
   const message =
-    "Hello FINEDUCATION INSTITUTE. " + type +
-    ". Name: " + (name || "Returning visitor") +
-    ". Email: " + email +
-    ". Contact: " + phone +
-    ". Service: " + interest +
-    ". Please guide me on the next steps.";
+    "Hello FINEDUCATION INSTITUTE." +
+    "\nType: " + type +
+    "\nName: " + (name || "Returning visitor") +
+    "\nEmail: " + (email || "Not provided") +
+    "\nContact: " + phone +
+    "\nService: " + interest +
+    "\nPlease guide me on the next steps.";
 
-  window.open(
-    "https://wa.me/917794097864?text=" + encodeURIComponent(message),
-    "_blank",
-    "noopener"
-  );
-  closeAuth();
-  }
-</script>
-<section id="market-updates" style="max-width:900px;margin:30px auto;padding:20px;font-family:Arial,sans-serif;">
-  <h2>Market Updates | మార్కెట్ సమాచారం</h2>
-  <p>Mutual Funds, Stocks & ETFs — విద్యాపరమైన సమాచారం</p>
-  <div id="market-posts">మార్కెట్ సమాచారం లోడ్ అవుతోంది...</div>
-</section>
+  const whatsappUrl =
+    "https://wa.me/917794097864?text=" +
+    encodeURIComponent(message);
 
-<script>
-fetch('./market-updates.json')
-  .then(response => {
-    if (!response.ok) throw new Error('డేటా అందుబాటులో లేదు');
-    return response.json();
-  })
-  .then(data => {
-    const container = document.getElementById('market-posts');
-    container.textContent = '';
+  window.location.href = whatsappUrl;
+}
+
+async function loadMarketUpdates() {
+  const container = document.getElementById("market-posts");
+
+  try {
+    const response = await fetch("./market-updates.json");
+
+    if (!response.ok) {
+      throw new Error("Market updates unavailable");
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data.posts) || data.posts.length === 0) {
+      throw new Error("No market posts");
+    }
+
+    container.textContent = "";
 
     data.posts.forEach(post => {
-      const card = document.createElement('article');
-      card.style.cssText = 'padding:15px;margin:15px 0;border:1px solid #ddd;border-radius:10px;';
+      const card = document.createElement("article");
+      card.className = "market-post";
 
-      const title = document.createElement('h3');
-      title.textContent = post.title;
+      const title = document.createElement("h3");
+      title.textContent = post.title || "Market Education";
 
-      const category = document.createElement('p');
-      category.textContent = post.category + ' | ' + post.date;
+      const category = document.createElement("p");
+      category.textContent =
+        (post.category || "Education") + " | " + (post.date || "");
 
-      const summary = document.createElement('p');
-      summary.textContent = post.summary;
+      const summary = document.createElement("p");
+      summary.textContent = post.summary || "";
 
-      const link = document.createElement('a');
-      link.href = post.sourceUrl;
-      link.textContent = 'మూల సమాచారం చూడండి';
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+      card.append(title, category, summary);
 
-      card.append(title, category, summary, link);
+      if (post.sourceUrl) {
+        try {
+          const url = new URL(post.sourceUrl);
+
+          if (url.protocol === "https:" || url.protocol === "http:") {
+            const link = document.createElement("a");
+            link.href = url.href;
+            link.textContent = "View source information →";
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            card.appendChild(link);
+          }
+        } catch (error) {
+          // Ignore an invalid source URL.
+        }
+      }
+
       container.appendChild(card);
     });
-  })
-  .catch(() => {
-    document.getElementById('market-posts').textContent =
-      'మార్కెట్ సమాచారం ప్రస్తుతం అందుబాటులో లేదు.';
-    });
+  } catch (error) {
+    container.textContent =
+      "Market updates are temporarily unavailable. Please check again later.";
+  }
+}
+
+loadMarketUpdates();
 </script>
+
 </body>
 </html>
