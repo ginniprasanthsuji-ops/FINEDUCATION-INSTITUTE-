@@ -490,5 +490,50 @@ function submitAuth(event) {
   closeAuth();
 }
 </script>
+
+<section id="market-updates" style="max-width:900px;margin:30px auto;padding:20px;font-family:Arial,sans-serif;">
+  <h2>Market Updates | మార్కెట్ సమాచారం</h2>
+  <p>Mutual Funds, Stocks & ETFs — విద్యాపరమైన సమాచారం</p>
+  <div id="market-posts">మార్కెట్ సమాచారం లోడ్ అవుతోంది...</div>
+</section>
+
+<script>
+fetch('./market-updates.json')
+  .then(response => {
+    if (!response.ok) throw new Error('డేటా అందుబాటులో లేదు');
+    return response.json();
+  })
+  .then(data => {
+    const container = document.getElementById('market-posts');
+    container.textContent = '';
+
+    data.posts.forEach(post => {
+      const card = document.createElement('article');
+      card.style.cssText = 'padding:15px;margin:15px 0;border:1px solid #ddd;border-radius:10px;';
+
+      const title = document.createElement('h3');
+      title.textContent = post.title;
+
+      const category = document.createElement('p');
+      category.textContent = post.category + ' | ' + post.date;
+
+      const summary = document.createElement('p');
+      summary.textContent = post.summary;
+
+      const link = document.createElement('a');
+      link.href = post.sourceUrl;
+      link.textContent = 'మూల సమాచారం చూడండి';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+
+      card.append(title, category, summary, link);
+      container.appendChild(card);
+    });
+  })
+  .catch(() => {
+    document.getElementById('market-posts').textContent =
+      'మార్కెట్ సమాచారం ప్రస్తుతం అందుబాటులో లేదు.';
+  });
+</script>
 </body>
 </html>
