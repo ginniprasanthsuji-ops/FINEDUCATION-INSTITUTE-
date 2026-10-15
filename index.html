@@ -229,6 +229,7 @@ footer {
 </div>
 
 <main>
+
 <section class="hero" id="home">
   <div class="container">
     <div class="tag">YOUR FINANCIAL SERVICES PLATFORM</div>
@@ -272,39 +273,29 @@ footer {
     <div class="card">
       <h3>Our Approach</h3>
       <ul>
-        <li>Simple explanations</li><li>Clear service scope and fees</li><li>Business record organisation</li><li>Financial awareness</li><li>Responsible handling of information</li>
+        <li>Simple explanations</li>
+        <li>Clear service scope and fees</li>
+        <li>Business record organisation</li>
+        <li>Financial awareness</li>
+        <li>Responsible handling of information</li>
       </ul>
     </div>
   </div>
 </section>
 
 <!-- DAILY STOCK RECOMMENDATION IMAGE -->
-<section id="daily-stock-recommendation"
-         style="padding:35px 0;background:#f4f7fb;">
+<section id="daily-stock-recommendation" style="padding:35px 0;background:#f4f7fb;">
   <div class="container">
     <div class="kicker">FINEDUCATION INSTITUTE</div>
     <h2>Daily Stock Recommendation</h2>
+    <p class="intro">Research-based market insights for educational purposes.</p>
 
-    <p class="intro">
-      Research-based market insights for educational purposes.
-    </p>
-
-    <a href="assets/daily-stock.png"
-       target="_blank"
-       rel="noopener">
+    <a href="assets/daily-stock.png" target="_blank" rel="noopener">
       <img
         src="assets/daily-stock.png"
         alt="FINEDUCATION INSTITUTE Daily Stock Recommendation"
         loading="lazy"
-        style="
-          display:block;
-          width:100%;
-          max-width:1000px;
-          height:auto;
-          margin:20px auto;
-          border-radius:14px;
-          box-shadow:0 5px 20px #10254420;
-        ">
+        style="display:block;width:100%;max-width:1000px;height:auto;margin:20px auto;border-radius:14px;box-shadow:0 5px 20px #10254420;">
     </a>
 
     <p class="small">
@@ -313,12 +304,24 @@ footer {
       market data before making investment decisions.
     </p>
   </div>
-</section><section id="market-updates">
+</section>
+
+<!-- MARKET UPDATES -->
+<section id="market-updates">
   <div class="container">
     <div class="kicker">Learn & Stay Informed</div>
     <h2>Market Updates | మార్కెట్ సమాచారం</h2>
     <p class="intro">Educational information about mutual funds, stocks and ETFs. This section is not a live price feed or a buy/sell recommendation.</p>
-    <div id="market-posts"><p>Market information loading...</p></div>
+
+    <!-- AUTOMATIC DATE -->
+    <p class="small">
+      <strong>Today's Date:</strong>
+      <time id="market-update-date" aria-live="polite"></time>
+    </p>
+
+    <div id="market-posts">
+      <p>Market information loading...</p>
+    </div>
   </div>
 </section>
 
@@ -371,6 +374,7 @@ footer {
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
@@ -383,6 +387,7 @@ footer {
 
 <a class="whatsapp" href="https://wa.me/917794097864?text=Hello%20FINEDUCATION%20INSTITUTE" target="_blank" rel="noopener">WhatsApp Us</a>
 
+<!-- LOGIN / SIGNUP ENQUIRY MODAL -->
 <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle" onclick="if(event.target===this)closeAuth()">
   <div class="panel">
     <button class="close" type="button" onclick="closeAuth()">Close ✕</button>
@@ -423,7 +428,34 @@ footer {
 </div>
 
 <script>
+/* AUTOMATIC FOOTER YEAR */
 document.getElementById("year").textContent = new Date().getFullYear();
+
+/* AUTOMATIC MARKET DATE */
+function updateMarketDate() {
+  const dateElement = document.getElementById("market-update-date");
+
+  if (!dateElement) return;
+
+  const now = new Date();
+
+  dateElement.dateTime = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, "0"),
+    String(now.getDate()).padStart(2, "0")
+  ].join("-");
+
+  dateElement.textContent = now.toLocaleDateString("en-IN", {
+    day: "2-digit",
+    month: "long",
+    year: "numeric"
+  });
+}
+
+updateMarketDate();
+
+/* Update the displayed date periodically if the page remains open. */
+setInterval(updateMarketDate, 60000);
 
 let authMode = "signup";
 
@@ -492,6 +524,7 @@ function submitAuth(event) {
   window.location.href = whatsappUrl;
 }
 
+/* LOAD MARKET UPDATES FROM market-updates.json */
 async function loadMarketUpdates() {
   const container = document.getElementById("market-posts");
 
@@ -539,7 +572,7 @@ async function loadMarketUpdates() {
             card.appendChild(link);
           }
         } catch (error) {
-          // Ignore an invalid source URL.
+          /* Ignore an invalid source URL. */
         }
       }
 
