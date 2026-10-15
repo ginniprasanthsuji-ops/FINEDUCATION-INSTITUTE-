@@ -180,6 +180,30 @@ footer strong{color:#fff;font-size:17px}
 @media(max-width:760px){.feature-grid{grid-template-columns:1fr}}
 
 </style>
+
+<style id="ginny-chatbot-styles">
+#ginny-launch{position:fixed;right:18px;bottom:18px;z-index:9998;border:0;border-radius:999px;padding:13px 18px;background:#102a43;color:#fff;font-weight:800;box-shadow:0 8px 28px #0003;cursor:pointer}
+#ginny-panel{position:fixed;right:18px;bottom:78px;width:min(390px,calc(100vw - 24px));height:min(600px,calc(100dvh - 110px));z-index:9999;background:#fff;color:#172b4d;border:1px solid #d9e2ec;border-radius:20px;box-shadow:0 18px 60px #0004;display:none;overflow:hidden;font-family:Arial,sans-serif}
+#ginny-panel.open{display:flex;flex-direction:column}
+#ginny-head{background:linear-gradient(135deg,#102a43,#176b87);color:#fff;padding:15px;display:flex;align-items:center;justify-content:space-between}
+#ginny-head strong{font-size:18px}#ginny-head small{display:block;opacity:.85;margin-top:4px}
+#ginny-close{background:transparent;color:white;border:0;font-size:25px;cursor:pointer}
+#ginny-lang{padding:9px 12px;border-bottom:1px solid #e6edf3;display:flex;gap:8px;align-items:center}
+#ginny-lang select{padding:7px;border:1px solid #ccd6e0;border-radius:8px;background:white}
+#ginny-messages{flex:1;overflow:auto;padding:12px;background:#f5f8fb}
+.ginny-msg{max-width:90%;padding:10px 12px;border-radius:14px;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.45;font-size:14px}
+.ginny-bot{background:#fff;border:1px solid #e2e8f0;border-top-left-radius:4px}
+.ginny-user{background:#d8f3e7;margin-left:auto;border-top-right-radius:4px}
+.ginny-sources{font-size:12px;margin-top:8px;line-height:1.7}.ginny-sources a{color:#075985}
+#ginny-quick{display:flex;flex-wrap:wrap;gap:6px;padding:8px 10px;background:white;border-top:1px solid #e6edf3}
+#ginny-quick button{font-size:12px;padding:7px 9px;border:1px solid #cbd5e1;border-radius:99px;background:#fff;cursor:pointer}
+#ginny-form{display:flex;gap:7px;padding:10px;background:white;border-top:1px solid #e6edf3}
+#ginny-input{flex:1;min-width:0;padding:11px;border:1px solid #cbd5e1;border-radius:12px;font-size:14px}
+#ginny-form button{border:0;border-radius:10px;background:#176b87;color:#fff;padding:0 12px;font-weight:700;cursor:pointer}
+#ginny-note{font-size:10px;color:#64748b;padding:0 11px 9px;background:white}
+@media(max-width:480px){#ginny-panel{right:8px;bottom:72px;width:calc(100vw - 16px);height: min(640px,calc(100dvh - 90px))}#ginny-launch{right:12px;bottom:12px}}
+</style>
+
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -661,6 +685,65 @@ document.getElementById("enquiryForm").addEventListener("submit",event=>{
 });
 
 </script>
+
+<button id="ginny-launch" type="button" aria-label="Open GINNY assistant">💬 Ask GINNY</button>
+<section id="ginny-panel" aria-label="GINNY financial learning assistant" aria-hidden="true">
+  <header id="ginny-head"><div><strong>✨ GINNY</strong><small>Financial Knowledge & Course Learning</small></div><button id="ginny-close" aria-label="Close chat" type="button">×</button></header>
+  <div id="ginny-lang"><label for="ginny-language">Language</label><select id="ginny-language"><option value="te">తెలుగు</option><option value="hi">हिन्दी</option><option value="en">English</option></select><button id="ginny-voice" type="button" title="Speak your question">🎙️ Speak</button></div>
+  <div id="ginny-messages" role="log" aria-live="polite"></div>
+  <div id="ginny-quick"><button data-q="Mutual funds అంటే ఏమిటి?">Mutual Funds</button><button data-q="NISM exams and courses">NISM Courses</button><button data-q="తెలుగులో financial planning చెప్పు">Financial Planning</button><button data-q="GST basics">GST Basics</button></div>
+  <form id="ginny-form"><input id="ginny-input" autocomplete="off" placeholder="Ask in Telugu, Hindi or English..." aria-label="Your question" required><button type="submit">Send</button></form>
+  <div id="ginny-note">Educational information only—not personalized investment, tax or legal advice. Avoid sharing PAN, OTPs, passwords or bank details.</div>
+</section>
+<script id="ginny-chatbot-script">
+(function(){
+ const panel=document.getElementById('ginny-panel'), launch=document.getElementById('ginny-launch'), close=document.getElementById('ginny-close');
+ const messages=document.getElementById('ginny-messages'), input=document.getElementById('ginny-input'), lang=document.getElementById('ginny-language');
+ const speakBtn=document.getElementById('ginny-voice');
+ const sources=[
+  ['SEBI Investor Education','https://investor.sebi.gov.in/'],
+  ['AMFI – Mutual Fund Investor','https://www.amfiindia.com/investor-corner'],
+  ['NISM – Courses & Certifications','https://www.nism.ac.in/'],
+  ['RBI – Financial Education','https://www.rbi.org.in/'],
+  ['PFRDA – NPS Information','https://www.pfrda.org.in/'],
+  ['GST Portal','https://www.gst.gov.in/'],
+  ['Income Tax Department','https://www.incometax.gov.in/']
+ ];
+ const words={
+  te:{welcome:'నమస్కారం! నేను GINNY. ఆర్థిక పరిజ్ఞానం, పెట్టుబడుల ప్రాథమికాలు, NISM కోర్సులు, NPS, GST మరియు వ్యాపార అభ్యాసం గురించి తెలుగులో అడగండి.',fallback:'ఈ అంశంపై ప్రాథమిక మార్గదర్శనం ఇవ్వగలను. మరింత ఖచ్చితమైన సమాచారం కోసం క్రింది అధికారిక వనరులను చూడండి. మీరు ఏ కోర్సు లేదా అంశం గురించి తెలుసుకోవాలనుకుంటున్నారు?',mutual:'మ్యూచువల్ ఫండ్ అనేది అనేక మంది పెట్టుబడిదారుల డబ్బును కలిపి, నియమాల ప్రకారం పెట్టుబడి పెట్టే పద్ధతి. రాబడి హామీ కాదు; మార్కెట్ రిస్క్ ఉంటుంది. పెట్టుబడి ముందు పథకం పత్రాలు, ఖర్చులు, రిస్క్ స్థాయి పరిశీలించండి.',nism:'NISMలో సెక్యూరిటీస్ మార్కెట్‌కు సంబంధించిన సర్టిఫికేషన్ పరీక్షలు, కోర్సులు ఉన్నాయి. అర్హత, సిలబస్, ఫీజు, పరీక్ష తేదీలు మారవచ్చు; అధికారిక NISM వెబ్‌సైట్‌లో తాజా వివరాలు చూడండి.',nps:'NPS అనేది పదవీ విరమణ కోసం రూపొందించిన దీర్ఘకాలిక మార్కెట్-లింక్డ్ పథకం. రాబడి హామీ కాదు. పథకం, పెట్టుబడి ఎంపికలు, ఖర్చులు మరియు ఉపసంహరణ నియమాలను అధికారిక PFRDA సమాచారంతో ధృవీకరించండి.',gst:'GST రిజిస్ట్రేషన్, రిటర్నులు, ఇన్వాయిస్‌లు వంటి అంశాలకు అధికారిక GST పోర్టల్‌ను ఉపయోగించండి. మీ వ్యాపార పరిస్థితి ఆధారంగా నిపుణుడి సలహా అవసరమవచ్చు.',planning:'ఆర్థిక ప్రణాళికకు సాధారణంగా ఖర్చుల బడ్జెట్, అత్యవసర నిధి, అధిక వడ్డీ అప్పుల నియంత్రణ, బీమా రక్షణ, లక్ష్యాలు మరియు రిస్క్‌కు సరిపోయే పెట్టుబడి ప్రణాళిక అవసరం. మీ వ్యక్తిగత పరిస్థితికి అనుగుణంగా నిర్ణయం తీసుకోండి.'},
+  hi:{welcome:'नमस्ते! मैं GINNY हूँ। वित्तीय जानकारी, निवेश की बुनियादी बातें, NISM कोर्स, NPS, GST और बिज़नेस सीखने के बारे में हिंदी में पूछें।',fallback:'मैं इस विषय पर सामान्य जानकारी दे सकता/सकती हूँ। अधिक सटीक जानकारी के लिए नीचे दिए गए आधिकारिक स्रोत देखें। आप किस कोर्स या विषय के बारे में जानना चाहते हैं?',mutual:'म्यूचुअल फंड में कई निवेशकों का पैसा मिलाकर नियमों के अनुसार निवेश किया जाता है। रिटर्न की गारंटी नहीं होती और बाजार का जोखिम रहता है। निवेश से पहले योजना के दस्तावेज़, शुल्क और जोखिम देखें।',nism:'NISM में सिक्योरिटीज़ मार्केट से जुड़े प्रमाणपत्र और कोर्स उपलब्ध हैं। पात्रता, पाठ्यक्रम, फीस और परीक्षा तिथियों की ताज़ा जानकारी आधिकारिक NISM वेबसाइट पर देखें।',nps:'NPS रिटायरमेंट के लिए एक दीर्घकालिक बाजार-लिंक्ड योजना है। रिटर्न की गारंटी नहीं है। निवेश विकल्पों, शुल्क और निकासी नियमों को PFRDA की आधिकारिक जानकारी से जाँचें।',gst:'GST पंजीकरण, रिटर्न और इनवॉइस संबंधी जानकारी के लिए आधिकारिक GST पोर्टल देखें। आपकी व्यावसायिक स्थिति के अनुसार विशेषज्ञ की सलाह आवश्यक हो सकती है।',planning:'वित्तीय योजना में बजट, आपातकालीन निधि, महँगे कर्ज़ को नियंत्रित करना, बीमा सुरक्षा, लक्ष्य तय करना और जोखिम के अनुसार निवेश शामिल हो सकते हैं।',},
+  en:{welcome:'Hello! I’m GINNY, your financial knowledge and course-learning assistant. Ask me about investing basics, NISM courses, NPS, GST, and business learning.',fallback:'I can share general guidance on this topic. For accurate, current details, please consult the official sources below. Which course or subject would you like to explore?',mutual:'A mutual fund pools money from investors and invests it according to the scheme objective. Returns are not guaranteed and market risk applies. Review the scheme documents, costs and risk level before investing.',nism:'NISM offers certifications and courses related to the securities markets. Check the official NISM website for current eligibility, syllabus, fees and exam dates.',nps:'NPS is a long-term, market-linked retirement system. Returns are not guaranteed. Verify investment choices, charges and withdrawal rules through official PFRDA information.',gst:'For GST registration, returns and invoicing, consult the official GST portal. Professional advice may be needed depending on your business situation.',planning:'A financial plan commonly considers budgeting, an emergency fund, high-interest debt, insurance protection, financial goals and investments suited to your risk tolerance.'}
+ };
+ function addMessage(text,who,withSources){const div=document.createElement('div');div.className='ginny-msg '+(who==='user'?'ginny-user':'ginny-bot');div.textContent=text;
+ if(withSources){const box=document.createElement('div');box.className='ginny-sources';box.textContent='Official learning sources: ';
+ sources.forEach((s,i)=>{if(i)box.append(' · ');const a=document.createElement('a');a.href=s[1];a.target='_blank';a.rel='noopener noreferrer';a.textContent=s[0];box.append(a)});div.append(box)}
+ messages.append(div);messages.scrollTop=messages.scrollHeight;return div}
+ function detect(text){const t=text.toLowerCase();
+ if(/mutual fund|మ్యూచువల్|म्यूचुअल|sip\b|సిప్/.test(t))return 'mutual';
+ if(/nism|నిస్మ|एनआईएसएम|course|కోర్సు|कोर्स|exam|పరీక్ష/.test(t))return 'nism';
+ if(/\bnps\b|పెన్షన్|पेंशन/.test(t))return 'nps';
+ if(/\bgst\b|జీఎస్టీ|जीएसटी|tax|పన్ను|टैक्स/.test(t))return 'gst';
+ if(/financial plan|planning|బడ్జెట్|ఆర్థిక ప్రణాళిక|वित्तीय योजना|budget/.test(t))return 'planning';
+ return 'fallback'}
+ function answer(text){const bank=words[lang.value]||words.en;return bank[detect(text)]||bank.fallback}
+ function speakReply(text){if(!window.speechSynthesis)return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang=lang.value==='te'?'te-IN':lang.value==='hi'?'hi-IN':'en-IN';window.speechSynthesis.speak(u)}
+ async function send(text){if(!text.trim())return;addMessage(text,'user',false);input.value='';const reply=addMessage('…','bot',false);
+ // Optional secure AI backend. Configure a server endpoint; never place an API key in this HTML.
+ const endpoint=window.GINNY_AI_ENDPOINT||'';
+ if(endpoint){try{const res=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:text,language:lang.value,assistant:'GINNY',purpose:'Financial knowledge and course learning',sources:sources.map(x=>({title:x[0],url:x[1]}))})});if(!res.ok)throw new Error('Backend error');const data=await res.json();reply.textContent=data.reply||data.answer||answer(text)}catch(e){reply.textContent=answer(text)+'\\n\\n(AI service is temporarily unavailable.)'}}
+ else reply.textContent=answer(text)+'\\n\\nNote: This website version uses a built-in learning guide, not a live generative AI model.';
+ const box=document.createElement('div');box.className='ginny-sources';box.textContent='Official learning sources: ';sources.forEach((s,i)=>{if(i)box.append(' · ');const a=document.createElement('a');a.href=s[1];a.target='_blank';a.rel='noopener noreferrer';a.textContent=s[0];box.append(a)});reply.append(box);messages.scrollTop=messages.scrollHeight;speakReply(reply.childNodes[0]?.textContent||reply.textContent);
+ }
+ launch.addEventListener('click',()=>{panel.classList.add('open');panel.setAttribute('aria-hidden','false');if(!messages.childElementCount)addMessage((words[lang.value]||words.en).welcome,'bot',true);input.focus()});
+ close.addEventListener('click',()=>{panel.classList.remove('open');panel.setAttribute('aria-hidden','true')});
+ document.getElementById('ginny-form').addEventListener('submit',e=>{e.preventDefault();send(input.value)});
+ document.querySelectorAll('#ginny-quick button').forEach(b=>b.addEventListener('click',()=>send(b.dataset.q)));
+ lang.addEventListener('change',()=>{if(!messages.childElementCount)addMessage((words[lang.value]||words.en).welcome,'bot',true);input.placeholder=lang.value==='te'?'తెలుగు, हिंदी లేదా English లో అడగండి...':lang.value==='hi'?'हिंदी, तेलुगु या English में पूछें...':'Ask in Telugu, Hindi or English...'});
+ speakBtn.addEventListener('click',()=>{const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){addMessage('Voice input is not supported in this browser. Please type your question.','bot',false);return}const rec=new SR();rec.lang=lang.value==='te'?'te-IN':lang.value==='hi'?'hi-IN':'en-IN';rec.interimResults=false;rec.onresult=e=>{input.value=e.results[0][0].transcript;send(input.value)};rec.onerror=()=>addMessage('Could not hear clearly. Please try again or type your question.','bot',false);rec.start()});
+ // Double-click a bot reply to read it aloud.
+ messages.addEventListener('dblclick',e=>{const el=e.target.closest('.ginny-bot');if(!el||!window.speechSynthesis)return;const u=new SpeechSynthesisUtterance(el.childNodes[0]?.textContent||el.textContent);u.lang=lang.value==='te'?'te-IN':lang.value==='hi'?'hi-IN':'en-IN';speechSynthesis.speak(u)});
+})();
+</script>
+
 </body>
 </html>
-</style>
