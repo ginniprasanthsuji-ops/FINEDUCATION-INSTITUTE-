@@ -452,6 +452,267 @@ footer strong{color:#fff;font-size:17px}
     <div class="notice"><strong>Important Disclaimer:</strong> This website provides general financial education and service information. It does not guarantee investment returns, loan approval, tax outcomes or insurance coverage. Mutual fund investments are subject to market risks. Regulated services will be provided only where the required registrations, qualifications and authorisations are held, or through appropriately authorised professionals. FINEDUCATION INSTITUTE is not an official website of any bank, AMC or government authority.</div>
   </div>
 </section>
+
+<style>
+#futureGoals{background:#f4f7fb;padding:55px 0}
+#futureGoals .fg-wrap{width:min(1050px,92%);margin:auto}
+#futureGoals .fg-card{background:#fff;border:1px solid #e1e8f1;border-radius:18px;padding:22px;margin-top:20px;box-shadow:0 10px 28px #1025440b}
+#futureGoals label{display:block;font-weight:700;margin:12px 0 5px;color:#102544}
+#futureGoals input,#futureGoals select{width:100%;padding:12px;border:1px solid #ccd6e3;border-radius:10px;background:white}
+#futureGoals .fg-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#futureGoals .fg-btn{margin-top:18px;padding:12px 17px;border:0;border-radius:10px;background:#102544;color:white;font-weight:750;cursor:pointer}
+#futureGoals .fg-result{background:#f0f7f3;padding:18px;border-radius:12px;margin-top:18px;overflow-wrap:anywhere}
+#futureGoals .fg-result strong{color:#126b45}
+#futureGoals .fg-note{font-size:13px;color:#68768a}
+@media(max-width:650px){#futureGoals .fg-grid{grid-template-columns:1fr}}
+</style>
+
+<section id="futureGoals">
+ <div class="fg-wrap">
+  <div class="kicker">Plan Your Future</div>
+  <h2>Future Goals & SIP Calculator</h2>
+  <p class="intro">మీ భవిష్యత్తు లక్ష్యాన్ని ఎంచుకోండి. లక్ష్యాన్ని చేరుకోవడానికి అవసరమైన నెలవారీ SIP మొత్తాన్ని అంచనా వేయండి.</p>
+
+  <div class="fg-card">
+   <div class="fg-grid">
+    <div>
+     <label for="fgName">మీ పేరు</label>
+     <input id="fgName" maxlength="80" placeholder="మీ పేరు">
+    </div>
+    <div>
+     <label for="fgPhone">WhatsApp మొబైల్ నంబర్</label>
+     <input id="fgPhone" type="tel" inputmode="numeric" placeholder="10 అంకెల నంబర్" maxlength="10">
+    </div>
+    <div>
+     <label for="fgGoal">మీ ఆర్థిక లక్ష్యం</label>
+     <select id="fgGoal">
+      <option value="పిల్లల చదువు">పిల్లల చదువు</option>
+      <option value="ఇల్లు కొనడం">ఇల్లు కొనడం</option>
+      <option value="పిల్లల వివాహం">పిల్లల వివాహం</option>
+      <option value="రిటైర్మెంట్">రిటైర్మెంట్</option>
+      <option value="అత్యవసర నిధి">అత్యవసర నిధి</option>
+      <option value="ఇతర లక్ష్యం">ఇతర లక్ష్యం</option>
+     </select>
+    </div>
+    <div>
+     <label for="fgAmount">భవిష్యత్తులో కావలసిన మొత్తం (₹)</label>
+     <input id="fgAmount" type="number" min="1000" max="1000000000" value="2500000">
+    </div>
+    <div>
+     <label for="fgYears">ఎన్ని సంవత్సరాల్లో కావాలి?</label>
+     <select id="fgYears">
+      <option value="3">3 సంవత్సరాలు</option>
+      <option value="5">5 సంవత్సరాలు</option>
+      <option value="10" selected>10 సంవత్సరాలు</option>
+      <option value="15">15 సంవత్సరాలు</option>
+      <option value="20">20 సంవత్సరాలు</option>
+      <option value="25">25 సంవత్సరాలు</option>
+      <option value="30">30 సంవత్సరాలు</option>
+     </select>
+    </div>
+    <div>
+     <label for="fgExisting">ఇప్పటికే ఉన్న పెట్టుబడి (₹)</label>
+     <input id="fgExisting" type="number" min="0" max="1000000000" value="0">
+    </div>
+    <div>
+     <label for="fgInflation">వార్షిక ద్రవ్యోల్బణ అంచనా (%)</label>
+     <select id="fgInflation">
+      <option value="0">0% — ద్రవ్యోల్బణం పరిగణించవద్దు</option>
+      <option value="4">4%</option>
+      <option value="6" selected>6%</option>
+      <option value="8">8%</option>
+     </select>
+    </div>
+    <div>
+     <label for="fgReturn">ఊహాత్మక వార్షిక రాబడి (%)</label>
+     <select id="fgReturn">
+      <option value="8">8% — ఉదాహరణ</option>
+      <option value="10" selected>10% — ఉదాహరణ</option>
+      <option value="12">12% — ఉదాహరణ</option>
+     </select>
+    </div>
+   </div>
+
+   <button class="fg-btn" type="button" id="fgCalculate">నా SIP లెక్కించండి</button>
+
+   <div id="fgOutput" class="fg-result" aria-live="polite">
+    మీ వివరాలు నమోదు చేసి లెక్కించండి.
+   </div>
+
+   <button class="fg-btn" type="button" id="fgPdf">PDF Proposal డౌన్‌లోడ్</button>
+   <button class="fg-btn" type="button" id="fgWhatsApp">WhatsApp ద్వారా Proposal పంపండి</button>
+
+   <p class="fg-note">
+    ముఖ్య గమనిక: ఈ సాధనం విద్యా ప్రయోజనాల కోసం మాత్రమే. SIP లేదా మ్యూచువల్ ఫండ్ రాబడులు హామీ కాదు. లెక్కలు అంచనాలు మాత్రమే; పన్నులు, ఖర్చులు మరియు మార్కెట్ హెచ్చుతగ్గుల వల్ల వాస్తవ ఫలితాలు మారవచ్చు. ఇది ఏదైనా నిర్దిష్ట ఫండ్ కొనుగోలు సిఫార్సు కాదు.
+   </p>
+
+   <p class="fg-note">
+    అధికారిక సమాచార వనరులు:
+    <a href="https://www.amfiindia.com/investor-corner" target="_blank" rel="noopener noreferrer">AMFI Investor Corner</a> ·
+    <a href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">SEBI Investor Education</a>
+   </p>
+  </div>
+ </div>
+</section>
+
+<script>
+(function(){
+ "use strict";
+
+ const $ = id => document.getElementById(id);
+ let latest = null;
+
+ function money(n){
+  return "₹" + Math.round(n).toLocaleString("en-IN");
+ }
+
+ function calculate(){
+  const name = $("fgName").value.trim() || "Customer";
+  const phone = $("fgPhone").value.trim();
+  const goal = $("fgGoal").value;
+  const target = Number($("fgAmount").value);
+  const years = Number($("fgYears").value);
+  const existing = Number($("fgExisting").value);
+  const inflation = Number($("fgInflation").value) / 100;
+  const annual = Number($("fgReturn").value) / 100;
+
+  if(!Number.isFinite(target) || target < 1000 ||
+     !Number.isFinite(existing) || existing < 0 ||
+     existing > 1000000000){
+   $("fgOutput").textContent =
+    "దయచేసి సరైన లక్ష్య మొత్తం, ప్రస్తుత పెట్టుబడి నమోదు చేయండి.";
+   latest = null;
+   return;
+  }
+
+  const months = years * 12;
+  const futureTarget = target * Math.pow(1 + inflation, years);
+  const monthlyRate = Math.pow(1 + annual, 1/12) - 1;
+  const existingFuture = existing * Math.pow(1 + monthlyRate, months);
+  const remaining = Math.max(0, futureTarget - existingFuture);
+
+  const factor = monthlyRate === 0
+   ? months
+   : (Math.pow(1 + monthlyRate, months) - 1) / monthlyRate;
+
+  const sip = remaining === 0 ? 0 : remaining / factor;
+  const invested = sip * months + existing;
+  const projected = sip * factor + existingFuture;
+
+  latest = {
+   name, phone, goal, target, years, existing,
+   inflation: inflation * 100,
+   annual: annual * 100,
+   futureTarget, sip, invested, projected,
+   date: new Date().toLocaleDateString("en-IN")
+  };
+
+  $("fgOutput").innerHTML =
+   "<strong>మీ లక్ష్యం:</strong> " + goal + "<br>" +
+   "<strong>ప్రస్తుత లక్ష్య మొత్తం:</strong> " + money(target) + "<br>" +
+   "<strong>ద్రవ్యోల్బణంతో భవిష్యత్తు లక్ష్యం:</strong> " +
+      money(futureTarget) + "<br>" +
+   "<strong>నెలవారీ అంచనా SIP:</strong> " + money(sip) + "<br>" +
+   "<strong>కాలవ్యవధి:</strong> " + years + " సంవత్సరాలు<br>" +
+   "<strong>అంచనా మొత్తం పెట్టుబడి:</strong> " + money(invested) + "<br>" +
+   "<strong>అంచనా భవిష్యత్తు విలువ:</strong> " + money(projected) +
+   "<p class='fg-note'>ఈ లెక్కలో నెలవారీ కాంపౌండింగ్ ఉపయోగించాం. వాస్తవ మార్కెట్ రాబడి స్థిరంగా ఉండదు. లక్ష్యాన్ని చేరుకోవడం హామీ కాదు.</p>";
+ }
+
+ $("fgCalculate").addEventListener("click", calculate);
+
+ function proposalText(){
+  if(!latest) calculate();
+  if(!latest) return "";
+  const d = latest;
+  return [
+   "FINEDUCATION INSTITUTE",
+   "FUTURE GOAL & SIP PROPOSAL",
+   "Date: " + d.date,
+   "Customer: " + d.name,
+   "Goal: " + d.goal,
+   "Current goal amount: " + money(d.target),
+   "Estimated future target: " + money(d.futureTarget),
+   "Time horizon: " + d.years + " years",
+   "Existing investment: " + money(d.existing),
+   "Illustrative annual return: " + d.annual + "%",
+   "Inflation assumption: " + d.inflation + "%",
+   "Estimated monthly SIP: " + money(d.sip),
+   "Estimated investment including existing corpus: " + money(d.invested),
+   "Illustrative future value: " + money(d.projected),
+   "",
+   "Important: Educational estimate only, not a guaranteed return or a recommendation to buy a particular mutual fund. Mutual fund investments are subject to market risks. Actual returns can be lower or negative. Review suitability, scheme documents, costs and risk before investing.",
+   "",
+   "Official learning resources:",
+   "https://investor.sebi.gov.in/",
+   "https://www.amfiindia.com/investor-corner",
+   "",
+   "FINEDUCATION INSTITUTE | Tekkali, Andhra Pradesh"
+  ].join("\n");
+ }
+
+ $("fgPdf").addEventListener("click", async function(){
+  const text = proposalText();
+  if(!text) return;
+
+  if(!window.jspdf || !window.jspdf.jsPDF){
+   alert("PDF library లోడ్ కాలేదు. ఇంటర్నెట్ కనెక్షన్‌ను పరిశీలించి మళ్లీ ప్రయత్నించండి.");
+   return;
+  }
+
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFont("helvetica","bold");
+  doc.setFontSize(17);
+  doc.text("FINEDUCATION INSTITUTE", 15, 20);
+  doc.setFont("helvetica","normal");
+  doc.setFontSize(12);
+
+  const lines = doc.splitTextToSize(text, 175);
+  let y = 32;
+
+  lines.forEach(line => {
+   if(y > 275){
+    doc.addPage();
+    y = 20;
+   }
+   doc.text(line, 15, y);
+   y += 7;
+  });
+
+  doc.save("FINEDUCATION-SIP-Proposal.pdf");
+ });
+
+ $("fgWhatsApp").addEventListener("click", function(){
+  const text = proposalText();
+  if(!text) return;
+
+  const phone = latest.phone;
+  if(!/^[6-9]\d{9}$/.test(phone)){
+   alert("దయచేసి సరైన 10 అంకెల భారతీయ WhatsApp నంబర్ నమోదు చేయండి.");
+   return;
+  }
+
+  const message =
+   "నమస్కారం " + latest.name +
+   ", మీ FINEDUCATION INSTITUTE SIP Goal Proposal వివరాలు సిద్ధంగా ఉన్నాయి.\n\n" +
+   "లక్ష్యం: " + latest.goal + "\n" +
+   "భవిష్యత్తు లక్ష్య మొత్తం: " + money(latest.futureTarget) + "\n" +
+   "అంచనా నెలవారీ SIP: " + money(latest.sip) + "\n" +
+   "కాలవ్యవధి: " + latest.years + " సంవత్సరాలు\n\n" +
+   "PDF Proposal‌ను డౌన్‌లోడ్ చేసి ఈ WhatsApp చాట్‌లో మీరు అటాచ్ చేయండి.\n\n" +
+   "గమనిక: లెక్కలు అంచనాలు మాత్రమే; రాబడికి హామీ లేదు.";
+
+  window.open(
+   "https://wa.me/91" + phone + "?text=" + encodeURIComponent(message),
+   "_blank",
+   "noopener,noreferrer"
+  );
+ });
+})();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </main>
 
 <a class="floating-wa" href="https://wa.me/917794097864?text=Hello%20FINEDUCATION%20INSTITUTE.%20I%20would%20like%20to%20enquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" aria-label="Chat with FINEDUCATION INSTITUTE on WhatsApp">◉ <span>WhatsApp Us</span></a>
