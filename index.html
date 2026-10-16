@@ -1006,5 +1006,411 @@ document.getElementById("enquiryForm").addEventListener("submit",event=>{
 })();
 </script>
 
+
+<!-- FINEDUCATION INSTITUTE: SIP RESEARCH -->
+<section id="sipResearch" class="sip-research">
+  <style>
+    .sip-research {
+      font-family: Arial, sans-serif;
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 20px;
+      color: #172554;
+      background: #f8fafc;
+      border-radius: 18px;
+      box-sizing: border-box;
+    }
+    .sip-research * { box-sizing: border-box; }
+    .sip-research h2 { color: #123b75; }
+    .sip-research .sr-field { margin: 14px 0; }
+    .sip-research label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+    .sip-research input,
+    .sip-research select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 9px;
+      background: white;
+      font-size: 16px;
+    }
+    .sip-research .sr-btn {
+      padding: 12px 16px;
+      border: 0;
+      border-radius: 9px;
+      margin: 5px 4px 5px 0;
+      background: #155eaa;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .sip-research .sr-card {
+      background: white;
+      border: 1px solid #dbeafe;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 12px 0;
+      overflow-wrap: anywhere;
+    }
+    .sip-research .sr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .sip-research .sr-number {
+      font-size: 22px;
+      font-weight: bold;
+      color: #087443;
+    }
+    .sip-research .sr-muted {
+      color: #475569;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .sip-research a { color: #155eaa; }
+    @media(max-width:600px) {
+      .sip-research { padding: 13px; }
+      .sip-research .sr-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body * { visibility: hidden; }
+      #sipResearch, #sipResearch * { visibility: visible; }
+      #sipResearch {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+      }
+      #sipResearch .sr-btn { display: none; }
+    }
+  </style>
+
+  <h2>🎯 Future Goals & SIP Research</h2>
+  <p>మీ ఆర్థిక లక్ష్యానికి అవసరమైన SIP లెక్కించండి.
+  పరిశోధన డేటా ఆధారంగా ఫండ్ల వివరాలను పరిశీలించండి.</p>
+
+  <div class="sr-grid">
+    <div class="sr-field">
+      <label for="srGoal">మీ లక్ష్యం</label>
+      <select id="srGoal">
+        <option value="Child Education">పిల్లల చదువు</option>
+        <option value="Home">ఇల్లు కొనడం</option>
+        <option value="Retirement">రిటైర్మెంట్</option>
+        <option value="Wealth">సంపద సృష్టి</option>
+        <option value="Other">ఇతర లక్ష్యం</option>
+      </select>
+    </div>
+    <div class="sr-field">
+      <label for="srTarget">లక్ష్య మొత్తం (₹)</label>
+      <input id="srTarget" type="number" min="1"
+        value="2500000">
+    </div>
+    <div class="sr-field">
+      <label for="srYears">ఎన్ని సంవత్సరాల్లో?</label>
+      <select id="srYears">
+        <option value="3">3 సంవత్సరాలు</option>
+        <option value="5">5 సంవత్సరాలు</option>
+        <option value="10" selected>10 సంవత్సరాలు</option>
+        <option value="15">15 సంవత్సరాలు</option>
+        <option value="20">20 సంవత్సరాలు</option>
+        <option value="25">25 సంవత్సరాలు</option>
+        <option value="30">30 సంవత్సరాలు</option>
+      </select>
+    </div>
+    <div class="sr-field">
+      <label for="srReturn">అంచనా వార్షిక రాబడి (%)</label>
+      <input id="srReturn" type="number" min="0"
+        max="30" step="0.5" value="10">
+    </div>
+    <div class="sr-field">
+      <label for="srInflation">వార్షిక ద్రవ్యోల్బణం (%)</label>
+      <input id="srInflation" type="number" min="0"
+        max="20" step="0.5" value="6">
+    </div>
+    <div class="sr-field">
+      <label for="srRisk">రిస్క్‌ను భరించే సామర్థ్యం</label>
+      <select id="srRisk">
+        <option value="Low">తక్కువ</option>
+        <option value="Moderate" selected>మధ్యస్థం</option>
+        <option value="High">ఎక్కువ</option>
+      </select>
+    </div>
+  </div>
+
+  <button class="sr-btn" id="srCalculate">SIP లెక్కించండి</button>
+  <button class="sr-btn" id="srResearch">Research Results చూడండి</button>
+
+  <div id="srOutput" aria-live="polite" class="sr-card">
+    మీ లక్ష్య వివరాలు నమోదు చేసి SIP లెక్కించండి.
+  </div>
+
+  <h3>📊 Mutual Fund Research Results</h3>
+  <p class="sr-muted">
+    క్రింది ఫలితాలు market-research.json ఫైల్‌లో ఉన్న డేటాపైనే
+    ఆధారపడతాయి. డేటా లేనప్పుడు ఫండ్ సిఫార్సు సృష్టించబడదు.
+  </p>
+  <div id="srResearchOutput" aria-live="polite" class="sr-card">
+    Research ఫలితాల కోసం బటన్ నొక్కండి.
+  </div>
+
+  <button class="sr-btn" id="srPdf">PDF / Print Proposal</button>
+  <button class="sr-btn" id="srWhatsApp">WhatsApp Proposal</button>
+
+  <p class="sr-muted">
+    Disclaimer: SIP రాబడులు మార్కెట్ పరిస్థితులపై ఆధారపడతాయి.
+    లెక్కలు అంచనాలు మాత్రమే; లాభానికి హామీ కాదు.
+    ఈ ఫీచర్ మాత్రమే వ్యక్తిగత పెట్టుబడి సలహాగా పరిగణించరాదు.
+  </p>
+  <p>
+    అధికారిక సమాచారం:
+    <a href="https://www.amfiindia.com/research-information/other-data/mf-scheme-performance-details"
+       target="_blank" rel="noopener">AMFI Fund Performance</a> |
+    <a href="https://www.amfiindia.com/nav-history-download"
+       target="_blank" rel="noopener">AMFI NAV History</a> |
+    <a href="https://www.sebi.gov.in/"
+       target="_blank" rel="noopener">SEBI</a>
+  </p>
+</section>
+
+<script>
+(function () {
+  "use strict";
+
+  const root = document.getElementById("sipResearch");
+  if (!root || root.dataset.initialized) return;
+  root.dataset.initialized = "true";
+
+  const $ = id => document.getElementById(id);
+  const money = n => "₹" + Math.round(n).toLocaleString("en-IN");
+  let lastProposal = "";
+  let researchLoaded = false;
+  let researchData = [];
+
+  function getInputs() {
+    return {
+      goal: $("srGoal").value,
+      target: Number($("srTarget").value),
+      years: Number($("srYears").value),
+      annual: Number($("srReturn").value),
+      inflation: Number($("srInflation").value),
+      risk: $("srRisk").value
+    };
+  }
+
+  function calculate() {
+    const x = getInputs();
+
+    if (!Number.isFinite(x.target) || x.target <= 0 ||
+        !Number.isFinite(x.years) || x.years <= 0 ||
+        !Number.isFinite(x.annual) || x.annual < 0 ||
+        x.annual > 30 || !Number.isFinite(x.inflation) ||
+        x.inflation < 0 || x.inflation > 20) {
+      $("srOutput").textContent =
+        "దయచేసి సరైన లక్ష్య మొత్తం, కాలం, రాబడి వివరాలు నమోదు చేయండి.";
+      return;
+    }
+
+    const months = x.years * 12;
+    const r = Math.pow(1 + x.annual / 100, 1 / 12) - 1;
+    const factor = r === 0 ? months :
+      (Math.pow(1 + r, months) - 1) / r;
+
+    const sip = x.target / factor;
+    const invested = sip * months;
+    const realTarget = x.target *
+      Math.pow(1 + x.inflation / 100, x.years);
+
+    lastProposal =
+      "FINEDUCATION INSTITUTE - SIP PROPOSAL\n" +
+      "Goal: " + x.goal + "\n" +
+      "Target today: " + money(x.target) + "\n" +
+      "Future target after inflation: " + money(realTarget) + "\n" +
+      "Duration: " + x.years + " years\n" +
+      "Illustrative annual return: " + x.annual + "%\n" +
+      "Estimated monthly SIP: " + money(sip) + "\n" +
+      "Estimated total investment: " + money(invested) + "\n" +
+      "Risk profile: " + x.risk + "\n" +
+      "This is an illustration, not a guaranteed return.";
+
+    $("srOutput").innerHTML = `
+      <div class="sr-grid">
+        <div>
+          <div>ప్రస్తుత లక్ష్య మొత్తం</div>
+          <div class="sr-number">${money(x.target)}</div>
+        </div>
+        <div>
+          <div>ద్రవ్యోల్బణంతో భవిష్యత్ లక్ష్యం</div>
+          <div class="sr-number">${money(realTarget)}</div>
+        </div>
+        <div>
+          <div>అవసరమైన నెలవారీ SIP (అంచనా)</div>
+          <div class="sr-number">${money(sip)}</div>
+        </div>
+        <div>
+          <div>మొత్తం పెట్టుబడి (అంచనా)</div>
+          <div class="sr-number">${money(invested)}</div>
+        </div>
+      </div>
+      <p class="sr-muted">
+        ${x.years} సంవత్సరాలు · వార్షిక అంచనా రాబడి ${x.annual}%
+        · నెలవారీ compounding illustration.
+        పన్నులు, ఖర్చులు, మార్కెట్ హెచ్చుతగ్గులు పరిగణించలేదు.
+        ద్రవ్యోల్బణం భవిష్యత్ లక్ష్యాన్ని ఎలా పెంచుతుందో
+        మాత్రమే ఇక్కడ చూపిస్తున్నాం.
+      </p>`;
+
+    return x;
+  }
+
+  async function loadResearch() {
+    const box = $("srResearchOutput");
+    box.textContent = "Research డేటా లోడ్ అవుతోంది...";
+
+    try {
+      const response = await fetch("./market-research.json", {
+        cache: "no-store"
+      });
+      if (!response.ok) throw new Error("Research file not found");
+
+      const data = await response.json();
+      if (!Array.isArray(data)) throw new Error("Invalid research format");
+
+      researchData = data;
+      researchLoaded = true;
+      renderResearch();
+    } catch (e) {
+      researchLoaded = false;
+      researchData = [];
+      box.textContent =
+        "Research డేటా అందుబాటులో లేదు. GitHub repositoryలో " +
+        "market-research.json ఫైల్ సృష్టించి, ధృవీకరించిన " +
+        "పరిశోధన డేటాను జోడించండి. ప్రస్తుతం ఫండ్ సిఫార్సు ఇవ్వలేం.";
+    }
+  }
+
+  function renderResearch() {
+    const x = getInputs();
+    const box = $("srResearchOutput");
+
+    if (!x || !researchLoaded || !researchData.length) {
+      box.textContent =
+        "ధృవీకరించిన Research డేటా లేదు. ఊహాజనిత ఫండ్ ఫలితాలు చూపించబడవు.";
+      return;
+    }
+
+    const valid = researchData.filter(f =>
+      f.name && f.category && f.sourceUrl &&
+      Number.isFinite(Number(f.returns3y)) &&
+      Number.isFinite(Number(f.expenseRatio)) &&
+      Number.isFinite(Number(f.riskScore)) &&
+      Number(f.riskScore) >= 1 && Number(f.riskScore) <= 5 &&
+      Number(f.returns3y) >= -100 &&
+      Number(f.returns3y) <= 100 &&
+      Number(f.expenseRatio) >= 0 &&
+      Number(f.expenseRatio) <= 10 &&
+      f.asOf && !Number.isNaN(Date.parse(f.asOf)) &&
+      Date.parse(f.asOf) <= Date.now() &&
+      ["Low", "Moderate", "High"].includes(f.risk)
+    );
+
+    const riskOrder = { Low: 1, Moderate: 2, High: 3 };
+    const matches = valid.filter(f =>
+      riskOrder[f.risk] <= riskOrder[x.risk]
+    );
+
+    if (!matches.length) {
+      box.textContent =
+        "ఈ రిస్క్ ప్రొఫైల్‌కు సరిపడే ధృవీకరించిన ఫండ్ల డేటా లేదు.";
+      return;
+    }
+
+    matches.sort((a, b) => {
+      const score = f =>
+        Number(f.returns3y) -
+        Number(f.expenseRatio) * 2 -
+        Number(f.riskScore) * 2;
+      return score(b) - score(a);
+    });
+
+    box.replaceChildren();
+
+    const intro = document.createElement("p");
+    intro.textContent =
+      "పరిశీలించిన ఫండ్లు: " + matches.length +
+      ". క్రమం 3-సంవత్సరాల రాబడి, ఖర్చు, రిస్క్ స్కోర్ ఆధారిత " +
+      "ప్రాథమిక స్క్రీనింగ్ మాత్రమే; ఇది కొనుగోలు సిఫార్సు కాదు.";
+    box.appendChild(intro);
+
+    matches.forEach(f => {
+      const card = document.createElement("div");
+      card.className = "sr-card";
+
+      const title = document.createElement("h4");
+      title.textContent = f.name;
+      card.appendChild(title);
+
+      const details = document.createElement("p");
+      details.textContent =
+        "వర్గం: " + f.category +
+        " | 3Y వార్షికీకరించిన రాబడి: " + f.returns3y + "%" +
+        " | ఖర్చు నిష్పత్తి: " + f.expenseRatio + "%" +
+        " | రిస్క్ స్కోర్: " + f.riskScore + "/5" +
+        " | రిస్క్ స్థాయి: " + f.risk +
+        " | డేటా తేదీ: " + f.asOf;
+      card.appendChild(details);
+
+      const link = document.createElement("a");
+      link.href = f.sourceUrl;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = "అధికారిక ఫండ్ సోర్స్ చూడండి";
+      card.appendChild(link);
+
+      box.appendChild(card);
+    });
+
+    const note = document.createElement("p");
+    note.className = "sr-muted";
+    note.textContent =
+      "గమనిక: ఈ స్క్రీనింగ్ పూర్తి due diligence కాదు. " +
+      "Benchmark పోలిక, పూర్తి కాలాల పనితీరు, SIP returns, " +
+      "fund factsheet, Riskometer మరియు తాజా వివరాలను " +
+      "పరిశీలించిన తర్వాత మాత్రమే తగిన నిర్ణయం తీసుకోవాలి.";
+    box.appendChild(note);
+  }
+
+  $("srCalculate").addEventListener("click", calculate);
+  $("srResearch").addEventListener("click", async () => {
+    if (!researchLoaded) await loadResearch();
+    else renderResearch();
+  });
+
+  $("srPdf").addEventListener("click", () => {
+    if (!lastProposal) calculate();
+    if (lastProposal) window.print();
+  });
+
+  $("srWhatsApp").addEventListener("click", () => {
+    if (!lastProposal) calculate();
+    if (!lastProposal) return;
+
+    const text = lastProposal +
+      "\nResearch details: " +
+      window.location.origin + window.location.pathname +
+      "#sipResearch";
+    const url = "https://wa.me/917794097864?text=" +
+      encodeURIComponent(text);
+    window.open(url, "_blank", "noopener");
+  });
+
+  loadResearch();
+})();
+</script>
+<!-- END SIP RESEARCH -->
 </body>
 </html>
